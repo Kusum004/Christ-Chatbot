@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+
+# runtime logs and the trace DB (contains real user questions) stay local;
+# evaluation outputs are kept
+logs/*
+!logs/eval_report*.md
+!logs/eval_results*.csv
+
+# Christite Handbook PDF is (c) CHRIST University - download it into data/kb/ yourself
+data/kb/*.pdf
+
+# only the deployed adapter (v1) is versioned; v2 keeps just its model card
+models/lora-helpdesk-v2/*
+!models/lora-helpdesk-v2/model_card.json

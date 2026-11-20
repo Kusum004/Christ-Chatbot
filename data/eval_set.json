@@ -1,0 +1,303 @@
+[
+ {
+  "q": "What is the minimum attendance required to write the End Semester Examination?",
+  "kw": [
+   "85"
+  ],
+  "pages": [
+   50,
+   52,
+   87
+  ],
+  "answerable": true
+ },
+ {
+  "q": "How much attendance do I need in a course to write the Mid Semester Examination?",
+  "kw": [
+   "75"
+  ],
+  "pages": [
+   50
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the fine for returning a library book late?",
+  "kw": [
+   "\\b5\\b|five"
+  ],
+  "pages": [
+   15
+  ],
+  "answerable": true
+ },
+ {
+  "q": "How many library books can an undergraduate student borrow and for how long?",
+  "kw": [
+   "\\b2\\b|two",
+   "14|fourteen"
+  ],
+  "pages": [
+   15
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What are the minimum marks needed in the ESE to pass a course?",
+  "kw": [
+   "40"
+  ],
+  "pages": [
+   52,
+   53
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What semester aggregate must PG students secure to pass the semester?",
+  "kw": [
+   "50"
+  ],
+  "pages": [
+   52
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the reduction in weightage for a repeat Mid Semester Examination?",
+  "kw": [
+   "\\b15\\s*%|15 per"
+  ],
+  "pages": [
+   51
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What grade is given for scoring 80 to 100 percent?",
+  "kw": [
+   "\\bO\\b|outstanding"
+  ],
+  "pages": [
+   64
+  ],
+  "answerable": true
+ },
+ {
+  "q": "When is the revaluation fee refunded?",
+  "kw": [
+   "10\\s*%|10 per"
+  ],
+  "pages": [
+   65
+  ],
+  "answerable": true
+ },
+ {
+  "q": "How much compensatory exam time do differently abled students get?",
+  "kw": [
+   "20[- ]?min"
+  ],
+  "pages": [
+   74
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What are the eligibility criteria for the merit scholarship?",
+  "kw": [
+   "70\\s*%",
+   "85\\s*%"
+  ],
+  "pages": [
+   77
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the award amount of the merit scholarship?",
+  "kw": [
+   "3,?000",
+   "10,?000"
+  ],
+  "pages": [
+   77
+  ],
+  "answerable": true
+ },
+ {
+  "q": "How do I apply for a fee concession?",
+  "kw": [
+   "\\bKP\\b|knowledge pro"
+  ],
+  "pages": [
+   76
+  ],
+  "answerable": true
+ },
+ {
+  "q": "Within how many days must international students register with FRRO after arrival?",
+  "kw": [
+   "14"
+  ],
+  "pages": [
+   79
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the late fine for not renewing the student visa and residential permit on time?",
+  "kw": [
+   "300"
+  ],
+  "pages": [
+   79
+  ],
+  "answerable": true
+ },
+ {
+  "q": "Within how many days should a ragging complaint be lodged?",
+  "kw": [
+   "three|\\b3\\b"
+  ],
+  "pages": [
+   91
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the time limit to file a sexual harassment complaint with the ICC?",
+  "kw": [
+   "(three|3) months"
+  ],
+  "pages": [
+   94
+  ],
+  "answerable": true
+ },
+ {
+  "q": "Can I wear jeans to campus?",
+  "kw": [
+   "\\bnot\\b|\\bno\\b|prohibited"
+  ],
+  "pages": [
+   84
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What happens if I am absent from classes continuously for two weeks without approval?",
+  "kw": [
+   "withdr"
+  ],
+  "pages": [
+   88
+  ],
+  "answerable": true
+ },
+ {
+  "q": "When was the Bangalore Kengeri Campus established?",
+  "kw": [
+   "2004"
+  ],
+  "pages": [
+   9
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the NIRF ranking of CHRIST University?",
+  "kw": [
+   "63"
+  ],
+  "pages": [
+   1
+  ],
+  "answerable": true
+ },
+ {
+  "q": "When was Christ College established?",
+  "kw": [
+   "1969"
+  ],
+  "pages": [
+   1,
+   9
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the maximum duration to complete a UG degree under NEP?",
+  "kw": [
+   "seven|\\b7\\b"
+  ],
+  "pages": [
+   46,
+   66,
+   67
+  ],
+  "answerable": true
+ },
+ {
+  "q": "Who is eligible for UG Honours with Research?",
+  "kw": [
+   "75\\s*%"
+  ],
+  "pages": [
+   45
+  ],
+  "answerable": true
+ },
+ {
+  "q": "How many courses can I register for CIA repeat at a time?",
+  "kw": [
+   "\\btwo\\b|\\b2\\b"
+  ],
+  "pages": [
+   68,
+   69,
+   70
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the maximum number of additional credits I can earn per semester?",
+  "kw": [
+   "\\b6\\b|six"
+  ],
+  "pages": [
+   74
+  ],
+  "answerable": true
+ },
+ {
+  "q": "What is the exact tuition fee for BTech Computer Science?",
+  "kw": [],
+  "pages": [],
+  "answerable": false
+ },
+ {
+  "q": "What is the hostel fee for first-year students?",
+  "kw": [],
+  "pages": [],
+  "answerable": false
+ },
+ {
+  "q": "What is on the cafeteria menu today?",
+  "kw": [],
+  "pages": [],
+  "answerable": false
+ },
+ {
+  "q": "Which bus route number goes to the Kengeri campus?",
+  "kw": [],
+  "pages": [],
+  "answerable": false
+ },
+ {
+  "q": "Who won the FIFA World Cup in 2022?",
+  "kw": [],
+  "pages": [],
+  "answerable": false
+ }
+]

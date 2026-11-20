@@ -1,0 +1,58 @@
+{
+  "versions": [
+    {
+      "adapter": "lora-helpdesk-v1",
+      "created": "2026-11-20 08:21",
+      "history": [
+        {
+          "epoch": 0,
+          "train_loss": null,
+          "val_loss": 0.643023285482611
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.6931130082618134,
+          "val_loss": 0.40180534922650885
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3305718710536085,
+          "val_loss": 0.3629084773627775
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.16104916595961388,
+          "val_loss": 0.384717283005427
+        }
+      ]
+    },
+    {
+      "adapter": "lora-helpdesk-v2",
+      "created": "2026-11-20 08:37",
+      "history": [
+        {
+          "epoch": 0,
+          "train_loss": null,
+          "val_loss": 0.7331660805890957
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.7547445831790803,
+          "val_loss": 0.3999819743136565
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3507027071605008,
+          "val_loss": 0.4163020929166426
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.18452151496950092,
+          "val_loss": 0.4210955973248929
+        }
+      ]
+    }
+  ],
+  "active": "lora-helpdesk-v1",
+  "decision": "Rolled back to v1 after evaluation: v2 (neg_share 0.10, early stop) cut wrong refusals 0.12->0.04 but lowered fact recall 0.71->0.62 by answering confidently from the wrong passage. A refusal is the safer failure for a student helpdesk."
+}

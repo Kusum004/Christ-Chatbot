@@ -1,0 +1,73 @@
+{
+  "adapter": "lora-helpdesk-v2",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "method": "LoRA (PEFT)",
+  "prompt_version": "rag_v2",
+  "created": "2026-11-20 08:37",
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "targets": [
+      "down_proj",
+      "gate_proj",
+      "k_proj",
+      "o_proj",
+      "q_proj",
+      "up_proj",
+      "v_proj"
+    ]
+  },
+  "train": {
+    "epochs": 3,
+    "best_epoch": 1,
+    "neg_share": 0.1,
+    "lr": 0.0002,
+    "grad_accum": 4,
+    "seed": 42,
+    "examples": 63,
+    "val_examples": 6,
+    "kinds": {
+      "answer": 51,
+      "refuse": 15,
+      "gold_removed": 3
+    }
+  },
+  "trainable_params": 8798208,
+  "total_params": 502830976,
+  "data_sha256": "7438bcedf594565f",
+  "leakage_dropped": [
+    [
+      "When did Christ College become a Deemed to be University?",
+      0.92
+    ],
+    [
+      "What grade do I get for 70 to 79 percent?",
+      0.85
+    ]
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": null,
+      "val_loss": 0.7331660805890957
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.7547445831790803,
+      "val_loss": 0.3999819743136565
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.3507027071605008,
+      "val_loss": 0.4163020929166426
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.18452151496950092,
+      "val_loss": 0.4210955973248929
+    }
+  ],
+  "minutes": 4.1,
+  "notes": "Not deployed: eval recall 0.62 vs v1 0.71; fewer refusals but more wrong-passage answers."
+}

@@ -1,0 +1,387 @@
+system,question,answerable,answer,keyword_recall,groundedness,refused,flags,correct_refusal,latency_ms,completion_tokens
+Model 1 - LLM only,What is the minimum attendance required to write the End Semester Examination?,True,"The minimum attendance requirement for writing the End Semester Examination at Christ Deemed to Be University, Bengaluru, varies depending on the specific course or program you're taking. Typically, this might include:
+
+1. **Core Courses**: These courses typically require a minimum of 40% attendance.
+2. **Optional Courses**: Some optional courses may have different attendance requirements.
+
+For example:
+- **Mathematics** courses: Usually require 80% attendance.
+- **Physics** courses: Usually require 75% attendance.
+- **Chemistry** courses: Usually require 60% attendance.
+
+Please check the detailed syllabus or contact your academic department directly for the exact attendance requirements for your particular course.",0.0,0.0,False,,,6281.318499999998,143
+Model 1 - LLM only,How much attendance do I need in a course to write the Mid Semester Examination?,True,"To write the Mid Semester Examination for your course, you typically need to have an average grade of 60% or better over the entire semester. This means that if you took all your exams and assignments during the semester, you would need to achieve at least 60% overall to pass the exam.
+
+If you're unsure about your current performance, it's best to review your grades from previous semesters and compare them with the required passing mark. If you find yourself below this threshold, consider revisiting your studies or seeking additional support to improve your academic standing.",0.0,0.0,False,,,4833.899199999905,115
+Model 1 - LLM only,What is the fine for returning a library book late?,True,"The fine for returning a library book late can vary depending on the library's policies, but typically it might range from 5-10 rupees per day or per week. It's important to check the specific rules of your library as they may differ based on location and type of books. If you're unsure, you can usually contact the library directly or ask staff about their policy.",1.0,0.0,False,,,3603.313099999923,79
+Model 1 - LLM only,How many library books can an undergraduate student borrow and for how long?,True,"An undergraduate student typically has a limited number of library books they can borrow, usually around 10-20 books per semester. The exact limit may vary depending on the university's policies and the specific course requirements. It's best to check with your academic advisor or the library directly for the most accurate information.",0.0,0.0,False,,,2639.442499999859,64
+Model 1 - LLM only,What are the minimum marks needed in the ESE to pass a course?,True,"To determine the minimum marks required for passing an ESE course, you typically need to refer to the specific syllabus or guidelines provided by your institution. Typically, ESE courses have their own set of requirements that might include:
+
+1. **Course Content**: The curriculum should cover all necessary topics related to the field of study.
+2. **Grade Criteria**: There may be specific criteria or grades that must be met to pass the course. These could vary depending on the institution but often include:
+   - A minimum score in each subject.
+   - A final exam grade.
+   - A project or research component.
+
+If you provide more details about the institution and the specific course, I can give you more precise information tailored to your needs.",0.0,0.25,False,,,7576.936699999806,148
+Model 1 - LLM only,What semester aggregate must PG students secure to pass the semester?,True,"To determine the required aggregate score for a PG student to pass a semester, you need to look at the specific requirements set by your institution or program. Typically, this would involve checking with the academic department or contacting the relevant faculty member directly.
+
+However, in general:
+
+1. **Bachelor's Degree**: Most universities have a minimum requirement of 50% or higher on their final exam.
+2. **Master's Degree**: For some programs, it might be slightly lower, but generally around 60-70%.
+
+It’s important to check the official policies of your university as they can vary depending on the program and institution. If you're unsure, reaching out to your advisor or the academic office is often the best way to get accurate information.",1.0,0.0,False,,,8880.68290000001,152
+Model 1 - LLM only,What is the reduction in weightage for a repeat Mid Semester Examination?,True,"The weightage for a repeat midsemester examination can vary depending on several factors, including the university's policies, the specific course or subject being repeated, and the institution's grading system. Typically, if you have already taken the exam multiple times, your weightage might decrease slightly as it becomes more difficult to demonstrate mastery over the material.
+
+However, some universities may still consider this as part of their overall assessment process and might adjust the weightage accordingly. It's best to check with your academic advisor or the relevant department at your university for the most accurate information regarding the current weightage for repeat exams.",0.0,0.0,False,,,12598.323699999582,121
+Model 1 - LLM only,What grade is given for scoring 80 to 100 percent?,True,"For a score between 80% and 100%, you would typically receive an A or B depending on your major or field of study. However, without knowing which specific subject or course you're taking, I can't give you a precise grade. If you have more details about what you're studying, I'd be happy to provide a more accurate response.",0.0,0.0,False,,,7705.699000000095,76
+Model 1 - LLM only,When is the revaluation fee refunded?,True,"The revaluation fee for property is typically refunded after a certain period, usually 18 months from the date of purchase or sale. This refund is calculated based on the original value of the property at the time of purchase or sale. It's important to check with your local government or property management office for specific details regarding when refunds will be processed.",0.0,0.0,False,,,8284.281700000065,71
+Model 1 - LLM only,How much compensatory exam time do differently abled students get?,True,"Compensatory exam time for differently abled students can vary depending on several factors, including their specific needs, accommodations available in the school's policies, and the nature of the course or test they're taking. Here are some general points:
+
+1. **Individual Needs**: Different differently abled students may have different needs. Some might need more time to adjust to new learning styles, while others might benefit from extra support.
+
+2. **Accommodations**: Schools often provide various accommodations to accommodate different abilities. These could include:
+   - **Visual Aids**: Braille books, large print materials, or audio descriptions.
+   - **Physical Accommodations**: Assistive technology like screen readers, speech recognition software, or adjustable desks.
+   - **Social Accommodations**: Accessible seating arrangements, sign language interpreters, or peer tutoring sessions.
+
+3. **School Policies**: The school’s policies regarding compensatory time can also play a role. For example, if there is a policy that requires students with disabilities to take additional breaks or use special accommodations, this would affect how much time is",0.0,0.1,False,,,23671.794599999885,220
+Model 1 - LLM only,What are the eligibility criteria for the merit scholarship?,True,"To qualify for a merit scholarship at Christ, you typically need to meet certain academic requirements and personal qualities. Here’s what you might expect:
+
+1. **Academic Performance**: You should have a good standing in your studies, with a minimum GPA or grade point average (GPA) that is considered satisfactory by the institution.
+
+2. **Personal Character**: The scholarship committee looks for individuals who demonstrate strong character traits such as honesty, integrity, and dedication to their studies.
+
+3. **Professional Experience**: If applicable, you may need to provide evidence of relevant professional experience or volunteer work that demonstrates your commitment to Christ's mission.
+
+4. **Application Process**: You will need to complete an application form, which often includes details about your academic performance, extracurricular activities, and any other relevant information.
+
+5. **Interviews**: Depending on the program, you may also be required to attend interviews where the scholarship committee evaluates your suitability for the scholarship based on your academic record and personal qualities.
+
+6. **Financial Requirements**: There may be additional financial requirements depending on the type of scholarship and the amount",0.0,0.0,False,,,22240.319100000306,220
+Model 1 - LLM only,What is the award amount of the merit scholarship?,True,"The award amount for a merit scholarship at Christ Deemed to Be University in Bengaluru typically ranges from Rs 10,000 to Rs 50,000 per academic year. This varies depending on the specific program and institution you're interested in. For the most accurate information, it's best to check directly with the university or contact their admissions office.",0.5,0.3333333333333333,False,,,2888.3593000000474,77
+Model 1 - LLM only,How do I apply for a fee concession?,True,"To apply for a fee concession at Christ, you typically need to follow these steps:
+
+1. **Review Your Application**: Before applying, make sure your application is complete and accurate. Check all required documents and ensure they meet the requirements.
+
+2. **Contact the Student Services Office**: You can contact the Student Services Office directly through their website or by phone. They will provide you with detailed information on how to proceed.
+
+3. **Fill Out the Fee Concession Form**: Fill out the fee concession form provided by Christ. This form should include details such as your name, address, date of birth, and any other relevant information.
+
+4. **Submit the Application**: Submit your completed fee concession form along with any necessary supporting documentation to the Student Services Office.
+
+5. **Follow Up**: After submitting your application, keep track of the status of your request. If there's an issue, don't hesitate to reach out to the Student Services Office again.
+
+6. **Wait for Approval**: Once your application has been reviewed, it may take some time before you receive approval. Be patient and stay in touch",0.0,0.16666666666666666,False,,,7902.714000000287,220
+Model 1 - LLM only,Within how many days must international students register with FRRO after arrival?,True,International students must register with the Foreign Registration Office (FRRO) within 14 days of their arrival in India. This is a mandatory requirement for all international students who wish to apply for permanent residency or other forms of residence in India.,1.0,0.5,False,,,1780.1440999996885,49
+Model 1 - LLM only,What is the late fine for not renewing the student visa and residential permit on time?,True,"The late fee for not renewing a student visa or residential permit can vary depending on several factors, including the country you're in, the specific regulations of your home country's immigration department, and whether you have any outstanding debts. In general:
+
+1. **Student Visa**: The late fee for not renewing a student visa typically ranges from 5% to 20% of the total amount due plus an additional 3-4%. This fee applies if you fail to pay within 90 days.
+
+2. **Residential Permit**: For residential permits, the late fee might range from 5% to 10% of the total amount due plus an additional 3-4%. Similar to the student visa, this fee applies if you don't pay within 90 days.
+
+It's important to note that these fees are usually calculated based on the total amount owed by the person who failed to renew their documents. If you have any outstanding debts, it could affect how much you owe and thus the late fee.
+
+If you need more detailed information about your specific situation, I",0.0,0.0,False,,,7865.712899999835,220
+Model 1 - LLM only,Within how many days should a ragging complaint be lodged?,True,"A ragging complaint should generally be lodged within 30 days from the date of the incident or event that led to the complaint. However, this can vary depending on the specific circumstances and the jurisdiction in which you are located. It's important to contact your institution's academic affairs office for guidance tailored to your situation.",0.0,0.3333333333333333,False,,,2184.6543999999994,65
+Model 1 - LLM only,What is the time limit to file a sexual harassment complaint with the ICC?,True,"The Indian Commission Against Discrimination in Employment (ICCD) has a specific time limit for filing a complaint regarding sexual harassment. The maximum period allowed for filing a complaint under the ICC is 180 days from the date of the alleged incident or any other relevant information. This means that if you have experienced sexual harassment, you should file your complaint within this timeframe to ensure it reaches the ICC as soon as possible.",0.0,0.0,False,,,3079.297000000224,85
+Model 1 - LLM only,Can I wear jeans to campus?,True,"Yes, you can wear jeans to campus as long as they are clean and appropriate for your academic environment. Jeans are a versatile piece that can complement various styles and suits different occasions. Just ensure they are clean and not too revealing, especially if you're attending events or classes where dress code might vary.",1.0,0.0,False,,,2103.9098000001104,61
+Model 1 - LLM only,What happens if I am absent from classes continuously for two weeks without approval?,True,"If you are absent from classes continuously for two weeks without approval, it could lead to disciplinary action by your institution. This might include:
+
+1. **Reprimand**: A warning or a minor reprimand.
+2. **Suspension**: If the absence is severe enough, you may face suspension or expulsion.
+
+It's important to understand that academic integrity is crucial, and any form of academic dishonesty, such as cheating or plagiarism, should not occur. If you have concerns about your behavior in class, consider speaking with a teacher or advisor who can provide guidance on how to handle these situations appropriately.",0.0,0.2,False,,,4340.836599999875,122
+Model 1 - LLM only,When was the Bangalore Kengeri Campus established?,True,"The Bangalore Kengeri Campus, also known as the Bangalore University Campus, was established in 1965. It is one of the oldest campuses of Christ University, located in Bangalore, Karnataka, India.",0.0,1.0,False,,,1519.1092999998546,44
+Model 1 - LLM only,What is the NIRF ranking of CHRIST University?,True,"I'm sorry, but I don't have access to real-time information about specific university rankings or statistics. The NIRF (National Institute of Rural Finance) ranking for Christ University in Bengaluru is not publicly available through my current system. For the most accurate and up-to-date information, you might want to check with Christ University's official website or contact their admissions office directly.",0.0,,True,,,2765.0739000000613,76
+Model 1 - LLM only,When was Christ College established?,True,"Christ College, formerly known as Christ's College, was established in 1920. It is a private university college located in Bangalore, India.",0.0,0.5,False,,,1420.2602000000297,32
+Model 1 - LLM only,What is the maximum duration to complete a UG degree under NEP?,True,"Under the National Eligibility Program for Postgraduate Education (NEP), the maximum duration to complete an undergraduate degree (UG) program varies depending on the institution and the specific course offered. Generally, the maximum duration can range from 4 years to 6 years.
+
+For example:
+- Some institutions may allow students to complete their UG degrees in as little as 3 years.
+- Others might require up to 5 years or even more.
+
+It's important to check the official NEP guidelines or contact the relevant university directly for the most accurate information regarding the maximum duration for your particular program.",0.0,0.2,False,,,8895.872099999906,120
+Model 1 - LLM only,Who is eligible for UG Honours with Research?,True,"UG Honours with Research is open to students who have completed their undergraduate degree in a relevant field, particularly those pursuing research opportunities or projects that require significant scholarly work. This typically involves having completed at least one year of full-time study and demonstrating a strong academic background in your chosen subject area. The eligibility criteria can vary depending on the institution and program you're applying to, but generally, it's important to check the specific requirements outlined by the university or department offering the program.",0.0,0.0,False,,,7035.6792000002315,96
+Model 1 - LLM only,How many courses can I register for CIA repeat at a time?,True,"At Christ University, you can register for CIA Repeat courses up to 3 times within a year. This means you can take it again after completing your first course in one semester. However, please note that this is subject to the availability of courses and may vary from year to year. For the most accurate information, it's best to check with the university directly or visit their official website.",0.0,0.25,False,,,5947.839499999645,79
+Model 1 - LLM only,What is the maximum number of additional credits I can earn per semester?,True,"The maximum number of additional credits you can earn per semester at Christ, Deemed to be University in Bengaluru is 12 credits. This limit applies for all courses offered during that semester. If you have already earned more than 12 credits, you will need to complete a course or pass an exam to achieve your goal.",0.0,0.3333333333333333,False,,,5166.817099999207,68
+Model 1 - LLM only,What is the exact tuition fee for BTech Computer Science?,False,"The exact tuition fee for a Bachelor of Technology in Computer Science at BTech, Bangalore can vary depending on several factors such as your location, the duration of study, and whether you choose to pursue an online or traditional course. As of my last update, the official fees for BTech Computer Science courses at BTech, Bangalore typically range from INR 10-25 lakhs per year.
+
+For more detailed information, I recommend checking the official BTech Computer Science website or contacting the BTech Computer Science department directly. They will provide you with the most accurate and up-to-date details regarding the current tuition fees.",,0.0,False,,False,9381.395200000043,126
+Model 1 - LLM only,What is the hostel fee for first-year students?,False,"The hostel fee for first-year students at Christ Deemed to Be University in Bengaluru typically ranges from INR 15,000 to INR 20,000 per month. This can vary depending on your specific year level and any additional charges that might apply. It's a good idea to check with the university directly or visit their official website for the most accurate and up-to-date information.",,0.0,False,,False,6235.163000000284,86
+Model 1 - LLM only,What is on the cafeteria menu today?,False,"I'm sorry, but I don't have real-time access to current information about the cafeteria menu at Christ University in Bengaluru. The menu would typically be updated daily or weekly based on the course offerings and any changes made by the dining hall staff. If you need this information now, I recommend checking the university's official website or contacting their dining services directly for the most accurate and up-to-date details.",,,True,,True,6297.703700000056,82
+Model 1 - LLM only,Which bus route number goes to the Kengeri campus?,False,The bus route number that goes to the Kengeri campus is 102.,,0.0,False,,False,1562.1847000002163,19
+Model 1 - LLM only,Who won the FIFA World Cup in 2022?,False,"The FIFA World Cup 2022 was won by South Africa, who defeated Germany in the final.",,0.0,False,,False,1668.1913000002169,23
+Model 2 - RAG,What is the minimum attendance required to write the End Semester Examination?,True,The minimum attendance required to sit the End Semester Examination (ESE) is 85%.,1.0,1.0,False,,,1552.148099999613,20
+Model 2 - RAG,How much attendance do I need in a course to write the Mid Semester Examination?,True,"To write the Mid Semester Examination, you need to secure at least 75% attendance in the relevant course.",1.0,1.0,False,,,1765.059299999848,24
+Model 2 - RAG,What is the fine for returning a library book late?,True,The fine for returning a library book late is Rs.5/- per day.,1.0,1.0,False,,,1278.090699999666,17
+Model 2 - RAG,How many library books can an undergraduate student borrow and for how long?,True,"An undergraduate student can borrow up to 4 books, each for a period of 14 days.",0.5,1.0,False,,,1616.590300000098,22
+Model 2 - RAG,What are the minimum marks needed in the ESE to pass a course?,True,"To pass a course under the given assessment and promotion policy:
+
+- Minimum of 40% marks in the ESE of a course.
+- Minimum of 40% aggregate marks in the CIA, attendance, and ESE of a course.",1.0,1.0,False,,,3936.578499999996,51
+Model 2 - RAG,What semester aggregate must PG students secure to pass the semester?,True,"To pass the semester for PG programs, PG students must secure a minimum 50% semester aggregate. This requirement applies to both CIA and ESE assessments.",1.0,1.0,False,,,2666.6495999998006,33
+Model 2 - RAG,What is the reduction in weightage for a repeat Mid Semester Examination?,True,The reduction in weightage for a repeat Mid Semester Examination is 15%.,1.0,1.0,False,,,1347.2215000001597,17
+Model 2 - RAG,What grade is given for scoring 80 to 100 percent?,True,"For a score of 80 to 100 percent, the grade is given as ""O"".",1.0,1.0,False,,,1635.1224999998522,23
+Model 2 - RAG,When is the revaluation fee refunded?,True,"The revaluation fee is typically refunded when the student passes the course after revaluation. According to the assessment and promotion policy, ""In the case of re-totalling, the re-calculated marks will be final."" Therefore, if a student passes the course after revaluation, they will receive the refund of their revaluation fee.",0.0,1.0,False,,,5102.838700000575,68
+Model 2 - RAG,How much compensatory exam time do differently abled students get?,True,"According to the assessment and promotion policy, differently abled students will be given compensatory time of maximum 20 minutes per hour, subject to the submission of medical documents to the Office of Examinations.",1.0,1.0,False,,,2116.623800000525,43
+Model 2 - RAG,What are the eligibility criteria for the merit scholarship?,True,"The merit scholarship has specific eligibility criteria:
+
+1. **First Class in All Previous Semesters**: This means that the applicant must have achieved a minimum of 70% in their first semester.
+2. **Minimum 85% Attendance**: This indicates that the applicant must have maintained a minimum attendance rate of 85% throughout their studies.
+3. **No Arrears**: This means that there should be no outstanding debts or financial obligations.
+
+These requirements ensure that applicants who meet these criteria will receive the merit scholarship.",1.0,0.4,False,,,3945.8265999992364,107
+Model 2 - RAG,What is the award amount of the merit scholarship?,True,"The merit scholarship has an award amount of ₹3,000 - ₹10,000 per student, depending on the eligibility criteria outlined in the given context.",1.0,1.0,False,,,1359.042000000045,37
+Model 2 - RAG,How do I apply for a fee concession?,True,"To apply for a fee concession, follow these steps:
+
+1. **Download the form**: From KP ERP, log into your Knowledge Pro (KP) ERP student account and download the fee concession application form.
+2. **Fill out completely**: Ensure all fields are filled out accurately.
+3. **Attach documents**: Attach copies of your previous semester marks card and attendance report.
+4. **Complete all fields**: Make sure all fields are correctly filled.
+5. **Submit**: Submit the completed application along with supporting documents (certificates mentioning prizes won).
+6. **Notify**: Notify the appropriate director or coordinator about your application status via email.
+
+Note that first-year students are not eligible for internal scholarships, but scholarships are provided by the University's alumni association.",1.0,0.75,False,,,5374.180300000262,151
+Model 2 - RAG,Within how many days must international students register with FRRO after arrival?,True,Within 14 days of arrival.,1.0,1.0,False,,,372.82869999944523,9
+Model 2 - RAG,What is the late fine for not renewing the student visa and residential permit on time?,True,"The late fine for not renewing the student visa and residential permit on time is stated as ""US$300"".",1.0,1.0,False,,,944.7354999992967,26
+Model 2 - RAG,Within how many days should a ragging complaint be lodged?,True,Within three working days.,1.0,1.0,False,,,255.44000000081724,6
+Model 2 - RAG,What is the time limit to file a sexual harassment complaint with the ICC?,True,The time limit to file a sexual harassment complaint with the ICC is 3 months from the date of the incident.,1.0,1.0,False,,,894.3211000005249,24
+Model 2 - RAG,Can I wear jeans to campus?,True,"Yes, according to the regulations, you can wear jeans to campus if they are formal trousers and shirts for male students; salwar kameez with dupatta for female students. However, exceptions may be allowed on specific occasions.",0.0,0.5,False,,,1678.8661999999022,47
+Model 2 - RAG,What happens if I am absent from classes continuously for two weeks without approval?,True,"If you are absent from classes continuously for two weeks without approval, you will be considered to have withdrawn from the University. This means that your leave application will not be processed further, and you will automatically terminate your membership upon withdrawal.",1.0,0.5,False,,,1665.319300000192,47
+Model 2 - RAG,When was the Bangalore Kengeri Campus established?,True,The Bangalore Kengeri Campus was established in 2004.,1.0,1.0,False,,,649.5902999995451,16
+Model 2 - RAG,What is the NIRF ranking of CHRIST University?,True,"According to the information provided, CHRIST (Deemed to be University) is ranked among the top 100 universities in India at 63 in the NIRF India Ranking 2025 of Ministry of Education, Government of India.",1.0,1.0,False,,,1850.3953999997975,51
+Model 2 - RAG,When was Christ College established?,True,Christ College was established in 1969.,1.0,1.0,False,,,488.9767999993637,12
+Model 2 - RAG,What is the maximum duration to complete a UG degree under NEP?,True,The maximum duration to complete a UG degree under NEP is seven years from the date of first enrolment to the programme.,1.0,1.0,False,,,1040.0366000003487,27
+Model 2 - RAG,Who is eligible for UG Honours with Research?,True,Students who secure 75% marks and above in the first six semesters and wish to undertake research at the undergraduate level can choose a research stream in the discipline that they have taken as a major leading to award of undergraduate Honours with Research.,1.0,1.0,False,,,1826.3831999993272,51
+Model 2 - RAG,How many courses can I register for CIA repeat at a time?,True,You can register for CIA repeat at most two courses at a time.,1.0,1.0,False,,,558.3212999999887,15
+Model 2 - RAG,What is the maximum number of additional credits I can earn per semester?,True,"The maximum number of additional credits you can earn per semester is 6 credits. This information is provided in the assessment and promotion policy section under the ""Additional credits"" subsection.",1.0,0.5,False,,,1307.434700000158,36
+Model 2 - RAG,What is the exact tuition fee for BTech Computer Science?,False,"The exact tuition fee for a BTech Computer Science degree varies depending on the specific program offered by each university. According to the information provided:
+
+- For the BTech Computer Science degree offered by Würzburg-Weissburg (THWS), the tuition fee is waived.
+- For the BTech Computer Science degree offered by the University of Alabama in Huntsville (AUS), the tuition fee is waived as well.
+
+However, without specific details about the exact program or year, it's not possible to provide an accurate tuition fee figure. If you need this information, I recommend checking the official website or contacting the respective universities directly for the most up-to-date tuition fees.",,0.2,False,,False,4858.002699999815,136
+Model 2 - RAG,What is the hostel fee for first-year students?,False,The hostel fee for first-year students is not mentioned in the given context. The information provided focuses on fee concessions and scholarships but does not include details about hostel fees.,,,True,,True,1408.738699999958,34
+Model 2 - RAG,What is on the cafeteria menu today?,False,"The cafeteria menu today does not mention anything about ragging. The text only mentions that ragging is prohibited in Christ (Deemed to be University) institutions, which includes cafeterias. There is no information provided about specific items on the cafeteria menu.",,,True,,True,1906.351800000266,52
+Model 2 - RAG,Which bus route number goes to the Kengeri campus?,False,"The bus route number that goes to the Kengeri campus is 17. This can be seen in the information provided for the Bangalore Kengeri Campus, which states ""Address: Bangalore Kengeri Campus, Karnataka Established in 2004, Bangalore Kengeri Campus is situated about 27 kms away from the Bangalore Central Campus on the Bangalore-Mysore Road of the State Highway 17 to be shortly upgraded to National Highway 275.""",,0.5,False,,False,3481.7494000008082,98
+Model 2 - RAG,Who won the FIFA World Cup in 2022?,False,"Based on the information provided:
+
+1. The context mentions ""FIFA World Cup"" but doesn't provide specific details about when it occurred.
+2. It states that ""Christ University"" was ""currently accredited with 'A+' Grade.""
+
+Since there's no mention of a specific year for the FIFA World Cup, we can't determine who won it definitively from this information alone.
+
+However, given that Christ University has been accredited with 'A+' Grade, it suggests they've had success in recent years, possibly including the FIFA World Cup. But without more specific data, we cannot confirm who won the FIFA World Cup specifically in 2022.",,0.2,False,,False,4947.695199999544,132
+Model 3 - RAG + LLMOps + PEFT,What is the minimum attendance required to write the End Semester Examination?,True,Attendance is marked at the commencement of each period. Late-comers may be allowed entry but not credited with attendance. [2],0.0,1.0,False,,,1075.2598999997645,27
+Model 3 - RAG + LLMOps + PEFT,How much attendance do I need in a course to write the Mid Semester Examination?,True,"Attendance is calculated based on participation in theory classes, practical courses, internships, projects, assessments, and other prescribed academic components as approved by the Board of Studies for the respective course/ programme. [2]",0.0,1.0,False,,,2570.7348999994792,43
+Model 3 - RAG + LLMOps + PEFT,What is the fine for returning a library book late?,True,A fine of Rs.5/- per day is charged for late returns. [1],1.0,1.0,False,,,1598.7677000002805,19
+Model 3 - RAG + LLMOps + PEFT,How many library books can an undergraduate student borrow and for how long?,True,An undergraduate student can borrow up to 4 books each semester for 14 days. [2],1.0,1.0,False,,,1552.961000000323,22
+Model 3 - RAG + LLMOps + PEFT,What are the minimum marks needed in the ESE to pass a course?,True,Minimum of 40% in the ESE of a course. [2],1.0,1.0,False,,,1404.5403999998598,18
+Model 3 - RAG + LLMOps + PEFT,What semester aggregate must PG students secure to pass the semester?,True,PG students must also secure a minimum 50% aggregate in their semester to pass the semester. [2],1.0,1.0,False,,,1476.5891999995802,24
+Model 3 - RAG + LLMOps + PEFT,What is the reduction in weightage for a repeat Mid Semester Examination?,True,A 15% reduction in weightage is applied to each repeat course. [1],1.0,1.0,False,,,1346.911700000419,20
+Model 3 - RAG + LLMOps + PEFT,What grade is given for scoring 80 to 100 percent?,True,O 10 4 Outstanding 70-79 A+ 9 3.6 Excellent 60-69 A 8 3.2 Very Good 55-59 B+ 7 2.8 Good 50-54 B 6 2.4 Above Average 45-49 C 5 2 Average 40-44 P 4 1.6 Pass,1.0,1.0,False,,,7210.659999999734,94
+Model 3 - RAG + LLMOps + PEFT,When is the revaluation fee refunded?,True,"The fee for reevaluation/re-to-tallying is refunded to those who passed the re-evaluation but had lower marks than they would have received if they had passed the original exam. [2]
+
+_Note: parts of this answer could not be verified against the knowledge base. Please confirm with the university office._",0.0,0.0,False,low_groundedness,,2956.844600000295,41
+Model 3 - RAG + LLMOps + PEFT,How much compensatory exam time do differently abled students get?,True,"Differently abled students get up to 20 minutes of compensatory time per hour, but this is subject to submission of medical documents to the Office of Examinations. [1]",1.0,1.0,False,,,2989.6434000002046,41
+Model 3 - RAG + LLMOps + PEFT,What are the eligibility criteria for the merit scholarship?,True,First-class in all previous semesters; 70% aggregate marks; minimum 85% attendance; no arrears. [1],1.0,1.0,False,,,2600.7615999997142,31
+Model 3 - RAG + LLMOps + PEFT,What is the award amount of the merit scholarship?,True,First-class in all previous semesters; 70% aggregate marks; minimum 85% attendance; no arrears. [1],0.0,1.0,False,,,2587.4040999997305,31
+Model 3 - RAG + LLMOps + PEFT,How do I apply for a fee concession?,True,Complete the application form and submit it along with supporting documents. [1],0.0,1.0,False,,,1339.2241000001377,16
+Model 3 - RAG + LLMOps + PEFT,Within how many days must international students register with FRRO after arrival?,True,Register on the FRRO portal at IndianFRRO.gov.in/eservices within 14 days of arrival. [1],1.0,1.0,False,,,1875.7462000003216,26
+Model 3 - RAG + LLMOps + PEFT,What is the late fine for not renewing the student visa and residential permit on time?,True,Late returns incur a fine of Rs.5/- per day. [4],0.0,1.0,False,,,1257.9061999995247,17
+Model 3 - RAG + LLMOps + PEFT,Within how many days should a ragging complaint be lodged?,True,A ragging complaint must be lodged within three working days of the incident. [1],1.0,1.0,False,,,1372.3744999997507,19
+Model 3 - RAG + LLMOps + PEFT,What is the time limit to file a sexual harassment complaint with the ICC?,True,An aggrieved person is required to submit a duly signed written complaint to the ICC as early as possible after the incident but not later than three months from the date of the incident. [2],1.0,1.0,False,,,2948.027500000535,40
+Model 3 - RAG + LLMOps + PEFT,Can I wear jeans to campus?,True,I don't have that information. Please contact the relevant university office or check https://christuniversity.in.,0.0,,True,model_refused,,1966.0484000005454,23
+Model 3 - RAG + LLMOps + PEFT,What happens if I am absent from classes continuously for two weeks without approval?,True,Attendance shortage leads to continuous absence. Students must apply for a detention certificate from the Office of Admissions within the deadline. [1],0.0,1.0,False,,,1957.8928000000815,28
+Model 3 - RAG + LLMOps + PEFT,When was the Bangalore Kengeri Campus established?,True,The Bangalore Kengeri Campus was established in 2004. [2],1.0,1.0,False,,,1400.2466000001732,19
+Model 3 - RAG + LLMOps + PEFT,What is the NIRF ranking of CHRIST University?,True,"The multi-disciplinary University which focuses on teaching, research and service offers Bachelor, Master and Doctoral programmes in humanities, social sciences, sciences, commerce, management, engineering, architecture, education, and law to about 40000+ students. The University offers its programmes at four campus locations in Bangalore in Karnataka, at Lavasa in Pune in Maharashtra, and Ghaziabad in Delhi NCR. [2]",0.0,1.0,False,,,6304.60260000018,87
+Model 3 - RAG + LLMOps + PEFT,When was Christ College established?,True,Christ College was established in 1969. [1],1.0,1.0,False,,,1317.6490000005288,15
+Model 3 - RAG + LLMOps + PEFT,What is the maximum duration to complete a UG degree under NEP?,True,A student who has failed in one or more courses of the ESE in any semester is allowed to appear for the supplementary examinations in the subsequent semester. [3],0.0,1.0,False,,,2742.563699999664,34
+Model 3 - RAG + LLMOps + PEFT,Who is eligible for UG Honours with Research?,True,Students who secure 75% marks and above in the first six semesters and wish to undertake research at the undergraduate level can choose a research stream in the discipline that they have taken as a major leading to award of undergraduate Honours with Research. [1],1.0,1.0,False,,,3985.7443000000785,54
+Model 3 - RAG + LLMOps + PEFT,How many courses can I register for CIA repeat at a time?,True,The maximum number of courses allowed for CIA repeat at a time is only two. [1],1.0,1.0,False,,,1631.5107000000353,20
+Model 3 - RAG + LLMOps + PEFT,What is the maximum number of additional credits I can earn per semester?,True,The maximum number of credits that can be earned through additional courses is 6 credits per semester. [1],1.0,1.0,False,,,1763.3655999998155,23
+Model 3 - RAG + LLMOps + PEFT,What is the exact tuition fee for BTech Computer Science?,False,"I couldn't verify the exact figure in the handbook. Please see **Academic Programmes, p.39** of the Christite Handbook 2026-27, or contact your department / the relevant university office.",,,True,unsupported_numbers:3000,True,1327.8448999999455,18
+Model 3 - RAG + LLMOps + PEFT,What is the hostel fee for first-year students?,False,I don't have that information. Please contact the relevant university office or check https://christuniversity.in.,,,True,low_relevance,True,37.37449999971432,0
+Model 3 - RAG + LLMOps + PEFT,What is on the cafeteria menu today?,False,I don't have that information. Please contact the relevant university office or check https://christuniversity.in.,,,True,low_relevance,True,37.133199999516364,0
+Model 3 - RAG + LLMOps + PEFT,Which bus route number goes to the Kengeri campus?,False,"The Bangalore Kengeri Campus is situated about 27 km away from the Bangalore Central Campus on the Bangalore-Mysore Road of the State Highway 17 to be soon upgraded to National Highway 275. The school offers Bachelor, Master and Doctoral programmes in engineering and technology, architecture, business and management studies, and psychology. The campus is 58 km away from the Kempegowda International Airport and 21 km away from the Krantivira Sangolli Rayanna railway station. [2]",,1.0,False,,False,7957.698999999593,110
+Model 3 - RAG + LLMOps + PEFT,Who won the FIFA World Cup in 2022?,False,I don't have that information. Please contact the relevant university office or check https://christuniversity.in.,,,True,low_relevance,True,28.997700000218174,0
+Ablation: Model 3 without PEFT,What is the minimum attendance required to write the End Semester Examination?,True,The minimum attendance required to sit the End Semester Examination (ESE) is 85%. This is based on the regulations provided in the given text.,1.0,0.5,False,,,2320.3709999997955,32
+Ablation: Model 3 without PEFT,How much attendance do I need in a course to write the Mid Semester Examination?,True,"I couldn't verify the exact figure in the handbook. Please see **Assessment and Promotion Policy, p.50** of the Christite Handbook 2026-27, or contact your department / the relevant university office.",0.0,,True,"unsupported_numbers:60,90",,15110.181600000033,220
+Ablation: Model 3 without PEFT,What is the fine for returning a library book late?,True,The fine for returning a library book late is Rs.5/- per day.,1.0,1.0,False,,,1539.141600000221,17
+Ablation: Model 3 without PEFT,How many library books can an undergraduate student borrow and for how long?,True,"An undergraduate student can borrow up to 4 books from the library, each for a period of 14 days. This limit is subject to the availability of books and the renewal process.",0.5,0.5,False,,,3226.0044999993625,39
+Ablation: Model 3 without PEFT,What are the minimum marks needed in the ESE to pass a course?,True,"The passage states that for a Course, a minimum of 40% marks in the ESE/ESE/ETE of a course is required to pass the course.",1.0,1.0,False,,,2823.040100000071,36
+Ablation: Model 3 without PEFT,What semester aggregate must PG students secure to pass the semester?,True,"PG students must secure a minimum 50% semester aggregate to pass the semester. This requirement applies to all courses, including those with practical/project components.",1.0,1.0,False,,,2389.1198999999688,32
+Ablation: Model 3 without PEFT,What is the reduction in weightage for a repeat Mid Semester Examination?,True,"The reduction in weightage for a repeat Mid Semester Examination is 30%. According to the Assessment and Promotion Policy, if a student does not appear for the Mid Semester Examination, an asterisk (*) is indicated in the marks card. This means they do not receive any credit for the exam.",0.0,0.6666666666666666,False,,,4253.489499999887,60
+Ablation: Model 3 without PEFT,What grade is given for scoring 80 to 100 percent?,True,"For a percentage grade of 80 to 100%, the grade is **O**. This corresponds to a **4-point grading system** where **80-100** represents **10 points**, **70-79** represents **9 points**, **60-69** represents **8 points**, **55-59** represents **7 points**, **50-54** represents **6 points**, **45-49** represents **5 points**, and **40-44** represents **4 points**.",1.0,0.5,False,,,8115.148199999567,121
+Ablation: Model 3 without PEFT,When is the revaluation fee refunded?,True,The revaluation fee is refundable if there is an improvement of at least 10% in the total marks.,1.0,1.0,False,,,1900.133299999652,25
+Ablation: Model 3 without PEFT,How much compensatory exam time do differently abled students get?,True,"Differently abled students receive up to 20 minutes of compensatory time per hour, subject to submission of medical documents to the Office of Examinations.",1.0,1.0,False,,,2751.8192999996245,35
+Ablation: Model 3 without PEFT,What are the eligibility criteria for the merit scholarship?,True,"The merit scholarship requires the following eligibility criteria:
+
+1. **First Class in All Previous Semesters**: This indicates that the applicant must have achieved a minimum of 70% aggregate marks in their previous semesters.
+
+2. **Minimum 85% Attendance**: This requirement ensures that the applicant has maintained a minimum attendance rate of 85%.
+
+3. **No Arrears**: This stipulation mandates that the applicant should not have any outstanding arrears during the period of application.
+
+4. **₹3,000 – ₹10,000 Per Student**: The amount awarded varies depending on the eligibility criteria but typically ranges from ₹3,000 to ₹10,000 per student.
+
+5. **University/Internal Scholarships**: The scholarship is specifically designed for students who meet the above eligibility criteria and are enrolled at Christ University.
+
+By meeting these eligibility requirements, applicants can secure a merit scholarship that provides financial assistance to enhance their academic performance and overall success at Christ University.",1.0,0.5714285714285714,False,,,14963.547599999401,207
+Ablation: Model 3 without PEFT,What is the award amount of the merit scholarship?,True,"The merit scholarship awards a full amount of ₹3,000 - ₹10,000 per student, depending on the student's eligibility criteria.",1.0,1.0,False,,,1297.1307000007073,34
+Ablation: Model 3 without PEFT,How do I apply for a fee concession?,True,"To apply for a fee concession, follow these steps:
+
+1. **Download the Form**: From KP ERP, log into your Knowledge Pro (KP) ERP student account and download the fee concession application form within the period notified by email.
+
+2. **Fill Out Completely**: Ensure all fields are correctly filled out.
+
+3. **Attach Documents**: Attach copies of your previous semester marks card and attendance report.
+
+4. **Complete All Fields Accurately**: Attach any additional documents required by the institution.
+
+5. **Review Attendance Record**: Check your attendance record from the previous semester to ensure it meets the criteria for eligibility.
+
+6. **Data Integrity**: Ensure data integrity is maintained throughout the process.
+
+7. **Apply Within Notification Period**: Submit your application by the specified date.
+
+**Note**: For first-year students, eligibility for internal scholarships is not guaranteed. Additionally, scholarships are offered through the University's alumni association.",1.0,0.7,False,,,7057.702299999619,183
+Ablation: Model 3 without PEFT,Within how many days must international students register with FRRO after arrival?,True,"Within 14 days of arrival, international students must register with FRRO.",1.0,1.0,False,,,1306.3309000008303,17
+Ablation: Model 3 without PEFT,What is the late fine for not renewing the student visa and residential permit on time?,True,The late fine for not renewing the student visa and residential permit on time is US$300.,1.0,1.0,False,,,1807.5477000002138,23
+Ablation: Model 3 without PEFT,Within how many days should a ragging complaint be lodged?,True,Within three working days.,1.0,1.0,False,,,490.4372000000876,6
+Ablation: Model 3 without PEFT,What is the time limit to file a sexual harassment complaint with the ICC?,True,The time limit to file a sexual harassment complaint with the ICC is 3 months from the date of the incident.,1.0,1.0,False,,,1289.235700000063,24
+Ablation: Model 3 without PEFT,Can I wear jeans to campus?,True,"Yes, according to the Regulations, it is prohibited to wear jeans to campus. This is stated in Section 3, where it states:
+
+""Personal grooming Hair must be neatly groomed and trimmed. Flashy hairstyles and hair colouring are not permitted on campus for any student.""
+
+Therefore, wearing jeans to campus is not allowed based on the Regulations.",1.0,1.0,False,,,2611.4607999998043,71
+Ablation: Model 3 without PEFT,What happens if I am absent from classes continuously for two weeks without approval?,True,"If you are absent from classes continuously for two weeks without approval, you will be considered to have withdrawn from the University. This will result in your leaving the University immediately upon admission.",1.0,0.5,False,,,1361.2886999999319,37
+Ablation: Model 3 without PEFT,When was the Bangalore Kengeri Campus established?,True,The Bangalore Kengeri Campus was established in 2004.,1.0,1.0,False,,,663.4093000002395,16
+Ablation: Model 3 without PEFT,What is the NIRF ranking of CHRIST University?,True,"The NIRF India Ranking 2025 of Ministry of Education, Government of India places CHRIST (Deemed to be University) at 63rd position.",1.0,1.0,False,,,1343.8171999996484,35
+Ablation: Model 3 without PEFT,When was Christ College established?,True,Christ College was established in 1969.,1.0,1.0,False,,,507.8316999997696,12
+Ablation: Model 3 without PEFT,What is the maximum duration to complete a UG degree under NEP?,True,The maximum duration to complete a UG degree under NEP is seven years from the date of first enrolment to the programme.,1.0,1.0,False,,,1057.4549999992087,27
+Ablation: Model 3 without PEFT,Who is eligible for UG Honours with Research?,True,Students eligible for UG Honours with Research are those who secure 75% marks and above in the first six semesters and wish to undertake research at the undergraduate level. They can choose a research stream in their major discipline leading to an award of undergraduate Honours with Research.,1.0,1.0,False,,,2193.7819999993735,58
+Ablation: Model 3 without PEFT,How many courses can I register for CIA repeat at a time?,True,"According to the assessment and promotion policy, the maximum number of courses allowed for CIA repeat at a time is only two.",1.0,1.0,False,,,1014.5365999997011,25
+Ablation: Model 3 without PEFT,What is the maximum number of additional credits I can earn per semester?,True,"The maximum number of additional credits that can be earned per semester is 6 credits. This is outlined in the assessment and promotion policy, which states that the additional credits can also be availed for co-curricular activities, NCC, CAPS, peer education, choir, and swo as approved by the University and run by different centers.",1.0,1.0,False,,,3243.595400000231,70
+Ablation: Model 3 without PEFT,What is the exact tuition fee for BTech Computer Science?,False,"I couldn't verify the exact figure in the handbook. Please see **Academic Programmes, p.39** of the Christite Handbook 2026-27, or contact your department / the relevant university office.",,,True,unsupported_numbers:1000,True,8313.110200000665,114
+Ablation: Model 3 without PEFT,What is the hostel fee for first-year students?,False,I don't have that information. Please contact the relevant university office or check https://christuniversity.in.,,,True,low_relevance,True,23.324300000240328,0
+Ablation: Model 3 without PEFT,What is on the cafeteria menu today?,False,I don't have that information. Please contact the relevant university office or check https://christuniversity.in.,,,True,low_relevance,True,19.549699999515724,0
+Ablation: Model 3 without PEFT,Which bus route number goes to the Kengeri campus?,False,The bus route number that goes to the Kengeri campus is 21 Kms away from the Kempegowda International Airport and 27 Kms away from the Krantivira Sangolli Rayanna railway station.,,1.0,False,,False,3753.9722000001348,49
+Ablation: Model 3 without PEFT,Who won the FIFA World Cup in 2022?,False,I don't have that information. Please contact the relevant university office or check https://christuniversity.in.,,,True,low_relevance,True,31.198200000289944,0
+A/B: RAG + prompt rag_v2,What is the minimum attendance required to write the End Semester Examination?,True,The minimum attendance required to sit the End Semester Examination (ESE) is 85%. This is based on the regulations provided in the given text.,1.0,0.5,False,,,2266.6538999992554,32
+A/B: RAG + prompt rag_v2,How much attendance do I need in a course to write the Mid Semester Examination?,True,"To determine your attendance requirement for writing the Mid Semester Examination, follow these steps:
+
+1. **Undergraduate Programs**: 
+   - **Theory Courses**: 75% attendance is necessary to appear for the Mid Semester Examination.
+
+2. **Postgraduate Programs**:
+   - **Core/ Elective Theory Courses**: 85% attendance is required to appear for the Mid Semester Examination.
+
+### Example Calculation:
+Let's assume you have completed 60 hours of classroom teaching and 30 hours of laboratory work for a core theory course.
+
+#### Undergraduate Programs:
+- **Attendance Requirement**: 75%
+- **Mid Semester Examination**: 60 hours (Classroom Teaching) + 30 hours (Laboratory Work) = 90 hours
+- **Total Hours Required**: 90 hours
+- **Attendance Score**: 75%
+
+#### Postgraduate Programs:
+- **Attendance Requirement**: 85%
+- **Mid Semester Examination**: 60 hours (Classroom Teaching) + 30 hours (Laboratory Work) = 90 hours
+-",1.0,0.8,False,,,8222.322900000108,220
+A/B: RAG + prompt rag_v2,What is the fine for returning a library book late?,True,The fine for returning a library book late is Rs.5/- per day.,1.0,1.0,False,,,1205.864599999586,17
+A/B: RAG + prompt rag_v2,How many library books can an undergraduate student borrow and for how long?,True,"An undergraduate student can borrow up to 4 books from the library, each for a period of 14 days. This limit is subject to the availability of books and the renewal process.",0.5,0.5,False,,,2697.445899999366,39
+A/B: RAG + prompt rag_v2,What are the minimum marks needed in the ESE to pass a course?,True,"The passage states that for a Course, a minimum of 40% marks in the ESE/ESE/ETE of a course is required to pass the course.",1.0,1.0,False,,,1765.1683000003686,36
+A/B: RAG + prompt rag_v2,What semester aggregate must PG students secure to pass the semester?,True,"PG students must secure a minimum 50% semester aggregate to pass the semester. This requirement applies to all courses, including those with practical/project components.",1.0,1.0,False,,,1185.2953999996316,32
+A/B: RAG + prompt rag_v2,What is the reduction in weightage for a repeat Mid Semester Examination?,True,"The reduction in weightage for a repeat Mid Semester Examination is 30%. According to the Assessment and Promotion Policy, if a student does not appear for the Mid Semester Examination, an asterisk (*) is indicated in the marks card. This means they do not receive any credit for the exam.",0.0,0.6666666666666666,False,,,2158.92359999998,60
+A/B: RAG + prompt rag_v2,What grade is given for scoring 80 to 100 percent?,True,"For a percentage grade of 80 to 100%, the grade is **O**. This corresponds to a **4-point grading system** where **80-100** represents **10 points**, **70-79** represents **9 points**, **60-69** represents **8 points**, **55-59** represents **7 points**, **50-54** represents **6 points**, **45-49** represents **5 points**, and **40-44** represents **4 points**.",1.0,0.5,False,,,7950.583099999676,121
+A/B: RAG + prompt rag_v2,When is the revaluation fee refunded?,True,The revaluation fee is refundable if there is an improvement of at least 10% in the total marks.,1.0,1.0,False,,,1091.667900000175,25
+A/B: RAG + prompt rag_v2,How much compensatory exam time do differently abled students get?,True,"Differently abled students receive up to 20 minutes of compensatory time per hour, subject to submission of medical documents to the Office of Examinations.",1.0,1.0,False,,,1830.1079999991998,35
+A/B: RAG + prompt rag_v2,What are the eligibility criteria for the merit scholarship?,True,"The merit scholarship requires the following eligibility criteria:
+
+1. **First Class in All Previous Semesters**: This indicates that the applicant must have achieved a minimum of 70% aggregate marks in their previous semesters.
+
+2. **Minimum 85% Attendance**: This requirement ensures that the applicant has maintained a minimum attendance rate of 85%.
+
+3. **No Arrears**: This stipulation mandates that the applicant should not have any outstanding arrears during the period of application.
+
+4. **₹3,000 – ₹10,000 Per Student**: The amount awarded varies depending on the eligibility criteria but typically ranges from ₹3,000 to ₹10,000 per student.
+
+5. **University/Internal Scholarships**: The scholarship is specifically designed for students who meet the above eligibility criteria and are enrolled at Christ University.
+
+By meeting these eligibility requirements, applicants can secure a merit scholarship that provides financial assistance to enhance their academic performance and overall success at Christ University.",1.0,0.5714285714285714,False,,,12795.976000000337,207
+A/B: RAG + prompt rag_v2,What is the award amount of the merit scholarship?,True,"The merit scholarship awards a full amount of ₹3,000 - ₹10,000 per student, depending on the student's eligibility criteria.",1.0,1.0,False,,,2785.726000000068,34
+A/B: RAG + prompt rag_v2,How do I apply for a fee concession?,True,"To apply for a fee concession, follow these steps:
+
+1. **Download the Form**: From KP ERP, log into your Knowledge Pro (KP) ERP student account and download the fee concession application form within the period notified by email.
+
+2. **Fill Out Completely**: Ensure all fields are correctly filled out.
+
+3. **Attach Documents**: Attach copies of your previous semester marks card and attendance report.
+
+4. **Complete All Fields Accurately**: Attach any additional documents required by the institution.
+
+5. **Review Attendance Record**: Check your attendance record from the previous semester to ensure it meets the criteria for eligibility.
+
+6. **Data Integrity**: Ensure data integrity is maintained throughout the process.
+
+7. **Apply Within Notification Period**: Submit your application by the specified date.
+
+**Note**: For first-year students, eligibility for internal scholarships is not guaranteed. Additionally, scholarships are offered through the University's alumni association.",1.0,0.7,False,,,11037.645999999768,183
+A/B: RAG + prompt rag_v2,Within how many days must international students register with FRRO after arrival?,True,"Within 14 days of arrival, international students must register with FRRO.",1.0,1.0,False,,,897.5178999999116,17
+A/B: RAG + prompt rag_v2,What is the late fine for not renewing the student visa and residential permit on time?,True,The late fine for not renewing the student visa and residential permit on time is US$300.,1.0,1.0,False,,,1001.0769999998956,23
+A/B: RAG + prompt rag_v2,Within how many days should a ragging complaint be lodged?,True,Within three working days.,1.0,1.0,False,,,317.96980000035546,6
+A/B: RAG + prompt rag_v2,What is the time limit to file a sexual harassment complaint with the ICC?,True,The time limit to file a sexual harassment complaint with the ICC is 3 months from the date of the incident.,1.0,1.0,False,,,1145.0504000004003,24
+A/B: RAG + prompt rag_v2,Can I wear jeans to campus?,True,"Yes, according to the Regulations, it is prohibited to wear jeans to campus. This is stated in Section 3, where it states:
+
+""Personal grooming Hair must be neatly groomed and trimmed. Flashy hairstyles and hair colouring are not permitted on campus for any student.""
+
+Therefore, wearing jeans to campus is not allowed based on the Regulations.",1.0,1.0,False,,,3236.339200000657,71
+A/B: RAG + prompt rag_v2,What happens if I am absent from classes continuously for two weeks without approval?,True,"If you are absent from classes continuously for two weeks without approval, you will be considered to have withdrawn from the University. This will result in your leaving the University immediately upon admission.",1.0,0.5,False,,,1929.6342000006916,37
+A/B: RAG + prompt rag_v2,When was the Bangalore Kengeri Campus established?,True,The Bangalore Kengeri Campus was established in 2004.,1.0,1.0,False,,,798.006400000304,16
+A/B: RAG + prompt rag_v2,What is the NIRF ranking of CHRIST University?,True,"The NIRF India Ranking 2025 of Ministry of Education, Government of India places CHRIST (Deemed to be University) at 63rd position.",1.0,1.0,False,,,2603.7398999997095,35
+A/B: RAG + prompt rag_v2,When was Christ College established?,True,Christ College was established in 1969.,1.0,1.0,False,,,952.962800000023,12
+A/B: RAG + prompt rag_v2,What is the maximum duration to complete a UG degree under NEP?,True,The maximum duration to complete a UG degree under NEP is seven years from the date of first enrolment to the programme.,1.0,1.0,False,,,2448.9657000003717,27
+A/B: RAG + prompt rag_v2,Who is eligible for UG Honours with Research?,True,Students eligible for UG Honours with Research are those who secure 75% marks and above in the first six semesters and wish to undertake research at the undergraduate level. They can choose a research stream in their major discipline leading to an award of undergraduate Honours with Research.,1.0,1.0,False,,,4534.402199999931,58
+A/B: RAG + prompt rag_v2,How many courses can I register for CIA repeat at a time?,True,"According to the assessment and promotion policy, the maximum number of courses allowed for CIA repeat at a time is only two.",1.0,1.0,False,,,2005.8632999998736,25
+A/B: RAG + prompt rag_v2,What is the maximum number of additional credits I can earn per semester?,True,"The maximum number of additional credits that can be earned per semester is 6 credits. This is outlined in the assessment and promotion policy, which states that the additional credits can also be availed for co-curricular activities, NCC, CAPS, peer education, choir, and swo as approved by the University and run by different centers.",1.0,1.0,False,,,5144.661899999846,70
+A/B: RAG + prompt rag_v2,What is the exact tuition fee for BTech Computer Science?,False,"The exact tuition fee for BTech Computer Science varies depending on the country and program. For example:
+
+- In Germany, the tuition fee for BTech Computer Science is €1,000 per year.
+- In the United States, the tuition fee for BTech Computer Science is $1,000 per year.
+
+Please note that this information may change over time due to inflation and other factors. It's always best to consult the most current data from the respective institution's website or contact their admissions office for the most accurate and up-to-date information.",,0.6,False,,False,8102.040099999613,114
+A/B: RAG + prompt rag_v2,What is the hostel fee for first-year students?,False,"The hostel fee for first-year students is ₹1,000 per month.",,1.0,False,,False,1226.1587999992116,18
+A/B: RAG + prompt rag_v2,What is on the cafeteria menu today?,False,"Today's cafeteria menu includes:
+
+- **Grilled Chicken Salad**  
+- **Pasta with Tomato Sauce**  
+- **Quinoa Bowl**  
+- **Vegetable Stir-Fry**  
+- **Chicken Curry**  
+- **Salad with Mixed Vegetables**  
+- **Omelette**  
+- **Fruit Salad**  
+- **Baked Potato**  
+- **Tofu Stir-Fry**  
+- **Grilled Cheese Sandwiches**  
+- **Greek Yogurt Parfait**  
+- **Smoothie**  
+- **Apple Pie**  
+- **Banana Bread**  
+- **Chocolate Chip Cookies**  
+- **Candy Bar**  
+- **Ice Cream**  
+- **Hot Chocolate**  
+- **Milkshake**  
+- **Coffee**  
+- **Tea**  
+- **Water**  
+- **Orange Juice**  
+- **Lemonade**  
+- **Grapefruit**",,0.0,False,,False,11901.669400000173,193
+A/B: RAG + prompt rag_v2,Which bus route number goes to the Kengeri campus?,False,The bus route number that goes to the Kengeri campus is 21 Kms away from the Kempegowda International Airport and 27 Kms away from the Krantivira Sangolli Rayanna railway station.,,1.0,False,,False,3816.0041000001,49
+A/B: RAG + prompt rag_v2,Who won the FIFA World Cup in 2022?,False,"In 2022, FIFA awarded the world championship to Qatar. This was the second consecutive time Qatar has hosted the tournament, following their victory in 2010.",,0.0,False,,False,2975.160400000277,38
