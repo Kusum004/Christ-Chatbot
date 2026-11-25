@@ -1,0 +1,18 @@
+# CHRIST University look: royal navy + gold
+[theme]
+base = "light"
+primaryColor = "#0b2d5b"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f3f5fa"
+textColor = "#16213e"
+font = "sans-serif"
+headingFont = "serif"
+baseRadius = "0.6rem"
+borderColor = "#dfe4ee"
+
+[theme.sidebar]
+backgroundColor = "#0b2d5b"
+secondaryBackgroundColor = "#173f7a"
+textColor = "#f5f7fb"
+primaryColor = "#f2b705"
+borderColor = "#2a5294"

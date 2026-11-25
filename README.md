@@ -13,26 +13,56 @@ LCA Activity: experiential, problem-based learning in Generative AI (exploring L
 
 PEFT is applied **only to the hybrid model**. Models 1 and 2 run the untouched base LLM; the same process loads one copy of the base weights and switches the adapter on only for Model 3 (`peft.disable_adapter()` for the others). Any difference in quality therefore comes from the design of each model, not from different base weights.
 
-**Report (simple-language PDF):** [reports/Christ_Helpdesk_Model_Report.pdf](reports/Christ_Helpdesk_Model_Report.pdf) - models used, architecture diagram, latency, token usage, effectiveness and comparison.
+**Technical report (PDF, 11 pages):** [reports/Christ_Helpdesk_Model_Report.pdf](reports/Christ_Helpdesk_Model_Report.pdf) - abstract, system overview, architecture, implementation (retrieval, LLMOps layer, LoRA), interface, experimental setup, results (quality, latency, tokens, qualitative examples, adapter iteration, prompt-only control), discussion, limitations and conclusion.
 
 ## Architecture
 
 ```
-            ┌─────────────── Model 3 only ───────────────┐
-question ──►│ input guardrails ─► semantic cache ─► hit? ├──► answer
-            └──────────────────────┬─────────────────────┘
-                                   ▼ miss
-   Christite Handbook PDF ─► section-aware chunks ─► BM25 + MiniLM embeddings
-                                   │  hybrid search (top-4)
-                                   ▼
-               relevance gate (Model 3) ─► versioned prompt + context
-                                   ▼
-                   Local LLM (Qwen2.5-0.5B-Instruct, GPU/CPU)
-                   + LoRA adapter (Model 3 only, from models/registry.json)
-                                   ▼
-            groundedness check (Model 3) ─► answer + page citations
-                                   ▼
-             trace → logs/llmops.db  ─► dashboard, feedback, review queue
+                                  [ User Query ]
+                                        │
+           ┌────────────────────────────┼───────────────────────────┐
+           │ (Model 1: Direct LLM)      │                           │ (Model 2: Standard RAG)
+           │ prompt: llm_only_v1        ▼ (Model 3: Hybrid)         │ prompt: rag_v1
+           │                 ┌──────────────────────┐               │
+           │                 │ 1. Input Guardrails  │               │
+           │                 │ PII / Jailbreak Redact│               │
+           │                 └──────────┬───────────┘               │
+           │                            ▼                           │
+           │                 ┌──────────────────────┐  Cache Hit    │
+           │                 │  2. Semantic Cache   ├───────────────┼─────────────┐
+           │                 │  MiniLM cosine >=0.95│  (<50ms fast) │             │
+           │                 └──────────┬───────────┘               │             │
+           │                            ▼ Cache Miss                │             │
+           │                 ┌──────────────────────┐               │             │
+           │  PDF Ingestion ─► 3. Hybrid Retriever  ◄──────────────┘             │
+           │  (324 Chunks)   │ Dense(0.6)+BM25(0.4) │                             │
+           │                 └──────────┬───────────┘                             │
+           │                            ▼ Top-4 Context                           │
+           │                 ┌──────────────────────┐                             │
+           │                 │  4. Relevance Gate   │                             │
+           │                 │  sim < 0.40 -> Refuse│                             │
+           │                 └──────────┬───────────┘                             │
+           │                            ▼ prompt: rag_v2                          │
+           ▼                            ▼                                         │
+┌────────────────────────────────────────────────────────────────────────┐        │
+│                5. Local Generator (Qwen2.5-0.5B-Instruct)              │        │
+│  M1, M2: Untouched base model          M3: Merged LoRA (lora-helpdesk) │        │
+└───────────────────────────────────────┬────────────────────────────────┘        │
+                                        ▼                                         │
+                             ┌──────────────────────┐                             │
+                             │ 6. Output Guardrails │                             │
+                             │ Numbers / Grounding  │                             │
+                             └──────────┬───────────┘                             │
+                                        ▼                                         │
+                             ┌──────────────────────┐                             │
+                             │  7. Verified Answer  │◄────────────────────────────┘
+                             │  + Page Citations [n]│
+                             └──────────┬───────────┘
+                                        ▼
+                             ┌──────────────────────┐
+                             │ 8. SQLite Telemetry  │──► Streamlit LLMOps Dashboard
+                             │ logs/llmops.db Trace │    Latency, Grounding, Feedback
+                             └──────────────────────┘
 ```
 
 ## Project layout
