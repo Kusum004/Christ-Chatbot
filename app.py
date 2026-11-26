@@ -31,23 +31,21 @@ BORDER_COLOR = "#DDE2EC"
 
 st.markdown(f"""
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
-
-  /* Global root typography and layout */
-  html, body, [class*="css"] {{
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: {TEXT_MAIN};
-  }}
-  .block-container {{
-    padding-top: 1.8rem;
+  /* Global root typography and high-contrast text */
+  html, body, [class*="css"], p, span, div, label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    color: #111827;
+  }
+  .block-container {
+    padding-top: 1.5rem;
     padding-bottom: 2.5rem;
     max-width: 1280px;
-  }}
+  }
 
   /* Top Institutional Navigation Bar */
-  .cu-topbar {{
-    background-color: {NAVY_PRIMARY};
-    border-bottom: 3.5px solid {GOLD_PRIMARY};
+  .cu-topbar {
+    background-color: #002147;
+    border-bottom: 3.5px solid #C59B27;
     border-radius: 6px;
     padding: 1rem 1.6rem;
     display: flex;
@@ -55,47 +53,34 @@ st.markdown(f"""
     justify-content: space-between;
     box-shadow: 0 4px 14px rgba(0, 33, 71, 0.12);
     margin-bottom: 1.4rem;
-  }}
-  .cu-crest-group {{
+  }
+  .cu-crest-group {
     display: flex;
     align-items: center;
     gap: 1.2rem;
-  }}
-  .cu-crest-shield {{
-    width: 52px;
-    height: 52px;
-    background: linear-gradient(135deg, {GOLD_PRIMARY} 0%, #A88118 100%);
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: {NAVY_PRIMARY};
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    font-weight: 700;
-    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.4), 0 2px 6px rgba(0,0,0,0.25);
-  }}
-  .cu-title-block {{
+  }
+  .cu-title-block {
     display: flex;
     flex-direction: column;
-  }}
-  .cu-inst-name {{
-    font-family: 'Cinzel', serif;
-    font-size: 1.28rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #FFFFFF;
+  }
+  .cu-inst-name {
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em;
+    color: #FFFFFF !important;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 !important;
     line-height: 1.25;
-  }}
-  .cu-sub-header {{
-    font-size: 0.82rem;
-    color: {GOLD_LIGHT};
-    letter-spacing: 0.06em;
+  }
+  .cu-sub-header {
+    font-size: 0.85rem !important;
+    color: #F3D27A !important;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    font-weight: 500;
-  }}
+    font-weight: 600 !important;
+    margin-top: 2px;
+  }
   .cu-right-tag {{
     text-align: right;
     display: none;
@@ -103,142 +88,157 @@ st.markdown(f"""
   @media (min-width: 768px) {{
     .cu-right-tag {{ display: block; }}
   }}
-  .cu-portal-badge {{
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(197, 155, 39, 0.4);
-    color: #F0F4FA;
-    font-size: 0.76rem;
-    padding: 0.3rem 0.75rem;
+  .cu-portal-badge {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(243, 210, 122, 0.6);
+    color: #FFFFFF !important;
+    font-size: 0.78rem !important;
+    padding: 0.35rem 0.8rem;
     border-radius: 4px;
-    font-weight: 500;
+    font-weight: 600 !important;
     letter-spacing: 0.04em;
-  }}
+  }
 
   /* Institutional Notice Banner */
-  .cu-notice {{
+  .cu-notice {
     background: #FFFFFF;
-    border: 1px solid {BORDER_COLOR};
-    border-left: 4px solid {NAVY_PRIMARY};
+    border: 1px solid #D1D5DB;
+    border-left: 4px solid #002147;
     border-radius: 4px;
     padding: 0.75rem 1rem;
     margin-bottom: 1.2rem;
-    font-size: 0.85rem;
-    color: #334155;
+    font-size: 0.88rem !important;
+    color: #1F2937 !important;
     display: flex;
     align-items: center;
     gap: 0.8rem;
-  }}
-  .cu-notice strong {{
-    color: {NAVY_PRIMARY};
-  }}
+  }
+  .cu-notice strong {
+    color: #002147 !important;
+  }
 
   /* Navigation Tabs */
-  .stTabs [data-baseweb="tab-list"] {{
+  .stTabs [data-baseweb="tab-list"] {
     gap: 0.6rem;
-    border-bottom: 1.5px solid {BORDER_COLOR};
+    border-bottom: 2px solid #E5E7EB;
     background: transparent;
-  }}
-  .stTabs [data-baseweb="tab"] {{
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: #475569;
+  }
+  .stTabs [data-baseweb="tab"] {
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
     padding: 0.6rem 1.1rem;
     border-radius: 4px 4px 0 0;
     border: none;
     transition: all 0.15s ease-in-out;
-  }}
-  .stTabs [data-baseweb="tab"]:hover {{
-    color: {NAVY_PRIMARY};
-    background: #F1F4F9;
-  }}
-  .stTabs [aria-selected="true"] {{
-    color: {NAVY_PRIMARY} !important;
+  }
+  .stTabs [data-baseweb="tab"]:hover {
+    color: #002147 !important;
+    background: #F3F4F6;
+  }
+  .stTabs [aria-selected="true"] {
+    color: #002147 !important;
     background: #FFFFFF !important;
-    border-bottom: 3px solid {GOLD_PRIMARY} !important;
-  }}
-  .stTabs [data-baseweb="tab-highlight"] {{
-    background-color: {GOLD_PRIMARY} !important;
+    border-bottom: 3px solid #C59B27 !important;
+  }
+  .stTabs [data-baseweb="tab-highlight"] {
+    background-color: #C59B27 !important;
     height: 3px !important;
-  }}
+  }
 
-  /* Message Feed: Portal Q&A Design instead of bubbly chat */
-  [data-testid="stChatMessage"] {{
-    background: #FFFFFF;
-    border: 1px solid {BORDER_COLOR};
-    border-radius: 5px;
+  /* Message Feed: Portal Q&A Design with high contrast */
+  [data-testid="stChatMessage"] {
+    background: #FFFFFF !important;
+    border: 1px solid #D1D5DB !important;
+    border-radius: 6px;
     padding: 1rem 1.2rem;
     margin-bottom: 0.8rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-  }}
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  [data-testid="stChatMessage"] p, [data-testid="stChatMessage"] span, [data-testid="stChatMessage"] div {
+    color: #111827 !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
   [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]),
-  [data-testid="stChatMessage"]:has(.cu-response-badge) {{
-    background: #FBFBFC;
-    border-left: 4px solid {NAVY_PRIMARY};
-  }}
-  .cu-response-badge {{
+  [data-testid="stChatMessage"]:has(.cu-response-badge) {
+    background: #F9FAFB !important;
+    border-left: 4.5px solid #002147 !important;
+  }
+  .cu-response-badge {
     display: inline-block;
-    background: {NAVY_PRIMARY};
-    color: #FFFFFF;
-    font-size: 0.70rem;
-    font-weight: 600;
+    background: #002147;
+    color: #FFFFFF !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
     letter-spacing: 0.05em;
-    padding: 0.15rem 0.55rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 3px;
     margin-bottom: 0.45rem;
     text-transform: uppercase;
-  }}
+  }
 
   /* Reference Box */
-  .cu-citation-box {{
+  .cu-citation-box {
     background: #F4F6F9;
     border: 1px solid #D5DBE5;
     border-radius: 4px;
     padding: 0.6rem 0.85rem;
     margin-top: 0.6rem;
-    font-size: 0.82rem;
-  }}
-  .cu-citation-box strong {{
-    color: {NAVY_PRIMARY};
-  }}
+    font-size: 0.85rem !important;
+    color: #1F2937 !important;
+  }
+  .cu-citation-box strong {
+    color: #002147 !important;
+  }
 
   /* Sidebar styling */
-  [data-testid="stSidebar"] {{
-    background-color: #FAFBFC;
-    border-right: 1px solid {BORDER_COLOR};
-  }}
-  .cu-sidebar-header {{
-    background: {NAVY_PRIMARY};
+  [data-testid="stSidebar"] {
+    background-color: #FFFFFF !important;
+    border-right: 1px solid #E5E7EB;
+  }
+  [data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label {
+    color: #1F2937 !important;
+  }
+  .cu-sidebar-header {
+    background: #002147;
     color: #FFFFFF;
-    padding: 0.9rem;
+    padding: 1rem;
     border-radius: 4px;
-    border-bottom: 2.5px solid {GOLD_PRIMARY};
+    border-bottom: 3px solid #C59B27;
     margin-bottom: 1rem;
-  }}
-  .cu-sidebar-header h3 {{
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    margin: 0;
-    color: #FFFFFF;
-  }}
-  .cu-sidebar-header p {{
-    font-size: 0.75rem;
-    color: {GOLD_LIGHT};
-    margin: 0.2rem 0 0 0;
-  }}
+  }
+  .cu-sidebar-header h3 {
+    font-family: Georgia, serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    color: #FFFFFF !important;
+  }
+  .cu-sidebar-header p {
+    font-size: 0.78rem !important;
+    color: #F3D27A !important;
+    margin: 0.2rem 0 0 0 !important;
+  }
 
   /* Metric cards */
-  [data-testid="stMetric"] {{
-    background: #FFFFFF;
-    border: 1px solid {BORDER_COLOR};
-    border-left: 3.5px solid {NAVY_PRIMARY};
+  [data-testid="stMetric"] {
+    background: #FFFFFF !important;
+    border: 1px solid #D1D5DB !important;
+    border-left: 3.5px solid #002147 !important;
     border-radius: 4px;
     padding: 0.65rem 0.9rem;
     box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-  }}
-  [data-testid="stMetricValue"] {{
-    color: {NAVY_PRIMARY};
-    font-weight: 700;
-  }}
+  }
+  [data-testid="stMetricLabel"] p {
+    color: #4B5563 !important;
+    font-weight: 600 !important;
+    font-size: 0.82rem !important;
+  }
+  [data-testid="stMetricValue"] div {
+    color: #002147 !important;
+    font-weight: 700 !important;
+  }
 </style>
 """, unsafe_allow_html=True)
 
