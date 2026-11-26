@@ -98,9 +98,35 @@ def load_markdown(path: Path):
 
 def load_chunks(kb_dir: Path = config.KB_DIR):
     chunks = []
-    for path in sorted(kb_dir.iterdir()):
-        if path.suffix.lower() == ".pdf":
-            chunks += load_pdf(path)
-        elif path.suffix.lower() == ".md":
-            chunks += load_markdown(path)
+    # If precomputed json chunks exist, prefer loading them directly (fast & cloud-compatible)
+    chunks_json = kb_dir / "handbook_chunks.json"
+    has_pdf = any(p.suffix.lower() == ".pdf" for p in kb_dir.iterdir()) if kb_dir.exists() else False
+
+    if chunks_json.exists() and not has_pdf:
+        import json
+        items = json.loads(chunks_json.read_text(encoding="utf-8"))
+        for it in items:
+            chunks.append(Chunk(
+                id=it["id"], source=it["source"], title=it["title"],
+                section=it["section"], text=it["text"], page=it.get("page")
+            ))
+        return chunks
+
+    if kb_dir.exists():
+        for path in sorted(kb_dir.iterdir()):
+            if path.suffix.lower() == ".pdf":
+                chunks += load_pdf(path)
+            elif path.suffix.lower() == ".md":
+                chunks += load_markdown(path)
+
+    # Fallback to json if PDF wasn't present or yielded nothing
+    if not chunks and chunks_json.exists():
+        import json
+        items = json.loads(chunks_json.read_text(encoding="utf-8"))
+        for it in items:
+            chunks.append(Chunk(
+                id=it["id"], source=it["source"], title=it["title"],
+                section=it["section"], text=it["text"], page=it.get("page")
+            ))
+
     return chunks

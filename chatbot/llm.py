@@ -18,17 +18,27 @@ class LocalLLM:
     def __init__(self, model_name: str = config.LLM_MODEL, adapter: Path | None = None):
         self.model_name = model_name
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        # On CUDA, use float16. On CPU (e.g. Streamlit Cloud), use float32 or bfloat16.
         dtype = torch.float16 if self.device == "cuda" else torch.float32
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForCausalLM.from_pretrained(model_name, dtype=dtype).to(self.device).eval()
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            torch_dtype=dtype,
+            low_cpu_mem_usage=True
+        ).to(self.device).eval()
+
         self.tuned, self.adapter, self.adapter_card = None, None, {}
         if adapter and Path(adapter).exists():
-            # Serving best practice: merge the LoRA weights into a separate copy of the base model,
-            # so Model 3 has zero adapter overhead and Models 1/2 keep the untouched base weights.
             from peft import PeftModel
-            base = AutoModelForCausalLM.from_pretrained(model_name, dtype=dtype)
-            self.tuned = PeftModel.from_pretrained(base, str(adapter)).merge_and_unload()
-            self.tuned = self.tuned.to(self.device).eval()
+            # Memory optimization: on GPU, merge into a separate model copy for zero-latency switching.
+            # On CPU (Streamlit Cloud with limited RAM), attach LoRA directly to avoid duplicating model weights.
+            if self.device == "cuda":
+                base = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=dtype, low_cpu_mem_usage=True)
+                self.tuned = PeftModel.from_pretrained(base, str(adapter)).merge_and_unload()
+                self.tuned = self.tuned.to(self.device).eval()
+            else:
+                self.tuned = PeftModel.from_pretrained(self.model, str(adapter))
+                self.tuned.eval()
             self.adapter = Path(adapter).name
             card = Path(adapter) / "model_card.json"
             self.adapter_card = json.loads(card.read_text(encoding="utf-8")) if card.exists() else {}
