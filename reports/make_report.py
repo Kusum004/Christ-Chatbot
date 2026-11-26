@@ -90,123 +90,210 @@ def chart_loss(versions, path):
     plt.close(fig)
 
 
-def chart_architecture(path):
-    fig, ax = plt.subplots(figsize=(8.0, 9.6))
-    ax.set_xlim(0, 10); ax.set_ylim(0, 14.5); ax.axis("off")
+def chart_architecture_m1(path):
+    fig, ax = plt.subplots(figsize=(6.8, 2.2))
+    ax.set_xlim(0, 10); ax.set_ylim(0, 3.0); ax.axis("off")
+    blue_fill, blue_edge = "#dce9f9", MODEL_COLORS[0]
 
-    cats = {
-        "m1": ("#dce9f9", MODEL_COLORS[0], "Model 1: Direct LLM Only (Baseline)"),
-        "m2": ("#fdebe3", MODEL_COLORS[1], "Model 2: Standard RAG Pipeline"),
-        "m3": ("#e2f4ec", MODEL_COLORS[2], "Model 3: Hybrid RAG + LLMOps + PEFT"),
-        "kb": ("#ffffff", INK2, "Knowledge Base / Offline Ingestion")
-    }
-
-    # 1. User Query Header Block
-    ax.add_patch(FancyBboxPatch((2.0, 13.5), 6.0, 0.8, boxstyle="round,pad=0.02,rounding_size=0.12",
+    # Query
+    ax.add_patch(FancyBboxPatch((0.4, 0.9), 2.2, 1.2, boxstyle="round,pad=0.02,rounding_size=0.12",
                                 facecolor="#f5f5f4", edgecolor=INK2, linewidth=1.2))
-    ax.text(5.0, 13.9, "User Query", fontsize=10, fontweight="bold", color=INK, ha="center", va="center")
-    ax.text(5.0, 13.65, "Student input entered via Web UI / API", fontsize=7.2, color=INK2, ha="center", va="center")
+    ax.text(1.5, 1.65, "User Query", fontsize=9.2, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(1.5, 1.25, "Raw student question", fontsize=7.0, ha="center", va="center", color=INK2)
 
-    # M1 direct bypass line (left side)
-    ax.add_patch(FancyArrowPatch((2.0, 13.9), (0.7, 13.9), arrowstyle="-", color=MODEL_COLORS[0], linewidth=1.5, linestyle="--"))
-    ax.add_patch(FancyArrowPatch((0.7, 13.9), (0.7, 5.75), arrowstyle="-", color=MODEL_COLORS[0], linewidth=1.5, linestyle="--"))
-    ax.add_patch(FancyArrowPatch((0.7, 5.75), (2.0, 5.75), arrowstyle="-|>", mutation_scale=10, color=MODEL_COLORS[0], linewidth=1.5, linestyle="--"))
-    ax.text(0.1, 10.0, "Model 1 Path\nDirect generation\n(prompt: llm_only_v1)\nNo retrieval\nNo guardrails",
-            fontsize=7.2, color=MODEL_COLORS[0], fontweight="bold", ha="left", va="center",
-            bbox=dict(boxstyle="round,pad=0.3", facecolor="#f0f5fc", edgecolor=MODEL_COLORS[0], alpha=0.9))
+    # Arrow 1
+    ax.add_patch(FancyArrowPatch((2.6, 1.5), (3.6, 1.5), arrowstyle="-|>", mutation_scale=11, color=blue_edge, linewidth=1.4))
+    ax.text(3.1, 1.75, "prompt:\nllm_only_v1", fontsize=6.8, ha="center", va="bottom", color=blue_edge, fontweight="bold")
 
-    # Center flow: Step 1 Input Guardrails (M3)
-    ax.add_patch(FancyArrowPatch((5.0, 13.5), (5.0, 12.7), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.add_patch(FancyBboxPatch((2.0, 11.8), 6.0, 0.9, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor=cats["m3"][0], edgecolor=cats["m3"][1], linewidth=1.3))
-    ax.text(2.2, 12.35, "1. Input Guardrails (M3)", fontsize=9.2, fontweight="bold", color=INK, va="center")
-    ax.text(2.2, 12.0, "Regex PII Redaction (reg no., phone, email) • Jailbreak & injection block", fontsize=7.1, color=INK2, va="center")
+    # Base LLM
+    ax.add_patch(FancyBboxPatch((3.6, 0.7), 2.8, 1.6, boxstyle="round,pad=0.02,rounding_size=0.12",
+                                facecolor=blue_fill, edgecolor=blue_edge, linewidth=1.4))
+    ax.text(5.0, 1.75, "Base LLM Generator", fontsize=9.2, fontweight="bold", ha="center", va="center", color=NAVY)
+    ax.text(5.0, 1.4, "Qwen2.5-0.5B-Instruct", fontsize=7.6, ha="center", va="center", color=INK)
+    ax.text(5.0, 1.1, "Parametric pre-training only", fontsize=7.0, ha="center", va="center", color=INK2)
+    ax.text(5.0, 0.85, "(No retrieval • No guardrails)", fontsize=6.8, ha="center", va="center", color="#b3261e")
 
-    # Step 2 Semantic Cache (M3)
-    ax.add_patch(FancyArrowPatch((5.0, 11.8), (5.0, 11.1), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.add_patch(FancyBboxPatch((2.0, 10.2), 6.0, 0.9, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor=cats["m3"][0], edgecolor=cats["m3"][1], linewidth=1.3))
-    ax.text(2.2, 10.75, "2. Semantic Cache (M3)", fontsize=9.2, fontweight="bold", color=INK, va="center")
-    ax.text(2.2, 10.4, "MiniLM cosine similarity >= 0.95 (scoped by prompt + adapter version)", fontsize=7.1, color=INK2, va="center")
+    # Arrow 2
+    ax.add_patch(FancyArrowPatch((6.4, 1.5), (7.4, 1.5), arrowstyle="-|>", mutation_scale=11, color=blue_edge, linewidth=1.4))
 
-    # Cache hit fast path to Response
-    ax.add_patch(FancyArrowPatch((8.0, 10.65), (9.0, 10.65), arrowstyle="-", color=cats["m3"][1], linewidth=1.3, linestyle=":"))
-    ax.add_patch(FancyArrowPatch((9.0, 10.65), (9.0, 2.3), arrowstyle="-", color=cats["m3"][1], linewidth=1.3, linestyle=":"))
-    ax.add_patch(FancyArrowPatch((9.0, 2.3), (8.0, 2.3), arrowstyle="-|>", mutation_scale=10, color=cats["m3"][1], linewidth=1.3, linestyle=":"))
-    ax.text(9.05, 6.5, "Cache Hit\n(Fast path <50ms)", fontsize=7.0, color=cats["m3"][1], fontweight="bold", ha="left", va="center")
-
-    # Cache Miss to Retrieval
-    ax.add_patch(FancyArrowPatch((5.0, 10.2), (5.0, 9.5), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.text(5.2, 9.85, "Cache Miss", fontsize=6.8, color=INK2, fontstyle="italic")
-
-    # Offline Ingestion Block (right side)
-    ax.add_patch(FancyBboxPatch((7.7, 8.4), 2.15, 1.3, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor=cats["kb"][0], edgecolor=cats["kb"][1], linewidth=1.0, linestyle="--"))
-    ax.text(8.77, 9.35, "Handbook PDF (KB)", fontsize=7.5, fontweight="bold", ha="center", va="center", color=INK)
-    ax.text(8.77, 8.95, "Section & TOC parsing", fontsize=6.8, ha="center", va="center", color=INK2)
-    ax.text(8.77, 8.65, "324 page-cited chunks", fontsize=6.8, ha="center", va="center", color=INK2)
-    ax.add_patch(FancyArrowPatch((7.7, 8.9), (7.0, 8.9), arrowstyle="-|>", mutation_scale=9, color=INK2, linewidth=1.0))
-
-    # Step 3 Hybrid Retriever (M2, M3)
-    ax.add_patch(FancyBboxPatch((2.0, 8.5), 5.0, 1.0, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor=cats["m2"][0], edgecolor=cats["m2"][1], linewidth=1.3))
-    ax.text(2.2, 9.1, "3. Hybrid Retriever (M2, M3)", fontsize=9.2, fontweight="bold", color=INK, va="center")
-    ax.text(2.2, 8.75, "Dense MiniLM-L6 (0.6) + BM25 (0.4) • Top-4 Chunks (Hit@4: 1.00)", fontsize=7.1, color=INK2, va="center")
-
-    # Step 4 Relevance Gate (M3)
-    ax.add_patch(FancyArrowPatch((4.5, 8.5), (4.5, 7.8), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.add_patch(FancyBboxPatch((2.0, 6.9), 6.0, 0.9, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor=cats["m3"][0], edgecolor=cats["m3"][1], linewidth=1.3))
-    ax.text(2.2, 7.45, "4. Semantic Relevance Gate (M3)", fontsize=9.2, fontweight="bold", color=INK, va="center")
-    ax.text(2.2, 7.1, "Max dense similarity < 0.40  ->  refuse out-of-scope query without LLM call", fontsize=7.1, color=INK2, va="center")
-
-    # M2 passes directly through (rag_v1 prompt)
-    ax.add_patch(FancyArrowPatch((1.6, 8.5), (1.6, 6.2), arrowstyle="-|>", mutation_scale=9, color=MODEL_COLORS[1], linewidth=1.2, linestyle="-."))
-    ax.text(1.5, 7.3, "M2:\nrag_v1", fontsize=6.8, color=MODEL_COLORS[1], fontweight="bold", ha="right", va="center")
-
-    # Step 5 Generator + Adapter (All models)
-    ax.add_patch(FancyArrowPatch((5.0, 6.9), (5.0, 6.2), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.add_patch(FancyBboxPatch((2.0, 5.1), 6.0, 1.1, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor="#f8f9fa", edgecolor=NAVY, linewidth=1.5))
-    ax.text(2.2, 5.85, "5. Local Generator (Qwen2.5-0.5B-Instruct)", fontsize=9.5, fontweight="bold", color=NAVY, va="center")
-    ax.text(2.2, 5.5, "M1 & M2: Untouched base weights (greedy decoding, fp16/fp32)", fontsize=7.1, color=INK, va="center")
-    ax.text(2.2, 5.25, "M3: Merged LoRA Adapter (lora-helpdesk-v1, r=16, 1.75% params)", fontsize=7.1, color=cats["m3"][1], fontweight="bold", va="center")
-
-    # Step 6 Output Verification / Guardrails (M3)
-    ax.add_patch(FancyArrowPatch((5.0, 5.1), (5.0, 4.4), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.add_patch(FancyBboxPatch((2.0, 3.5), 6.0, 0.9, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor=cats["m3"][0], edgecolor=cats["m3"][1], linewidth=1.3))
-    ax.text(2.2, 4.05, "6. Output Verification & Guardrails (M3)", fontsize=9.2, fontweight="bold", color=INK, va="center")
-    ax.text(2.2, 3.7, "Numeric grounding check vs context • Sentence-level groundedness score (>=0.5)", fontsize=7.1, color=INK2, va="center")
-
-    # Step 7 Verified Response
-    ax.add_patch(FancyArrowPatch((5.0, 3.5), (5.0, 2.7), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.add_patch(FancyBboxPatch((2.0, 1.9), 6.0, 0.8, boxstyle="round,pad=0.02,rounding_size=0.12",
+    # Output
+    ax.add_patch(FancyBboxPatch((7.4, 0.9), 2.2, 1.2, boxstyle="round,pad=0.02,rounding_size=0.12",
                                 facecolor="#f5f5f4", edgecolor=INK2, linewidth=1.2))
-    ax.text(5.0, 2.4, "Final Verified Response", fontsize=9.5, fontweight="bold", color=INK, ha="center", va="center")
-    ax.text(5.0, 2.1, "Precise student response with verified [n] handbook citations", fontsize=7.2, color=INK2, ha="center", va="center")
+    ax.text(8.5, 1.65, "Unverified Answer", fontsize=9.0, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(8.5, 1.25, "High hallucination risk\nNo page citations", fontsize=6.8, ha="center", va="center", color=INK2)
 
-    # Step 8 LLMOps Tracing & Feedback
-    ax.add_patch(FancyArrowPatch((5.0, 1.9), (5.0, 1.25), arrowstyle="-|>", mutation_scale=10, color=INK2, linewidth=1.1))
-    ax.add_patch(FancyBboxPatch((2.0, 0.45), 6.0, 0.8, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                facecolor=cats["m3"][0], edgecolor=cats["m3"][1], linewidth=1.2))
-    ax.text(2.2, 0.95, "7. LLMOps Tracing & Telemetry (M3 -> logs/llmops.db)", fontsize=8.8, fontweight="bold", color=INK, va="center")
-    ax.text(2.2, 0.65, "Latency, tokens, groundedness, adapter version, user thumbs rating -> Dashboard", fontsize=7.1, color=INK2, va="center")
-
-    # Legend at bottom
-    legend_items = [
-        (cats["m1"][0], cats["m1"][1], "Model 1: Direct LLM"),
-        (cats["m2"][0], cats["m2"][1], "Model 2: RAG"),
-        (cats["m3"][0], cats["m3"][1], "Model 3: LLMOps + PEFT"),
-        (cats["kb"][0], cats["kb"][1], "KB Offline Ingest")
-    ]
-    for j, (fill, edge, name) in enumerate(legend_items):
-        lx = 0.2 + j * 2.45
-        ax.add_patch(FancyBboxPatch((lx, 0.05), 0.35, 0.22, boxstyle="round,pad=0.01,rounding_size=0.04",
-                                    facecolor=fill, edgecolor=edge, linewidth=1.1))
-        ax.text(lx + 0.45, 0.16, name, fontsize=6.8, va="center", color=INK)
-
+    ax.text(0.4, 2.7, "Model 1: Direct LLM Only (Baseline Architecture)", fontsize=10, fontweight="bold", color=blue_edge)
     fig.tight_layout()
+    fig.savefig(path, dpi=240)
+    plt.close(fig)
+
+
+def chart_architecture_m2(path):
+    fig, ax = plt.subplots(figsize=(6.8, 3.4))
+    ax.set_xlim(0, 10); ax.set_ylim(0, 4.6); ax.axis("off")
+    orange_fill, orange_edge = "#fdebe3", MODEL_COLORS[1]
+
+    # Offline KB branch (top right)
+    ax.add_patch(FancyBboxPatch((6.8, 3.1), 2.8, 1.1, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor="#ffffff", edgecolor=INK2, linewidth=1.0, linestyle="--"))
+    ax.text(8.2, 3.8, "Christite Handbook PDF", fontsize=8.2, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(8.2, 3.4, "TOC parse • 324 cited chunks", fontsize=7.0, ha="center", va="center", color=INK2)
+
+    # User Query
+    ax.add_patch(FancyBboxPatch((0.4, 1.5), 1.9, 1.3, boxstyle="round,pad=0.02,rounding_size=0.12",
+                                facecolor="#f5f5f4", edgecolor=INK2, linewidth=1.2))
+    ax.text(1.35, 2.3, "User Query", fontsize=9.0, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(1.35, 1.85, "Raw question", fontsize=7.0, ha="center", va="center", color=INK2)
+
+    # Arrow to Retriever
+    ax.add_patch(FancyArrowPatch((2.3, 2.15), (2.9, 2.15), arrowstyle="-|>", mutation_scale=10, color=orange_edge, linewidth=1.3))
+
+    # Hybrid Retriever
+    ax.add_patch(FancyBboxPatch((2.9, 1.3), 2.3, 1.7, boxstyle="round,pad=0.02,rounding_size=0.12",
+                                facecolor=orange_fill, edgecolor=orange_edge, linewidth=1.3))
+    ax.text(4.05, 2.65, "Hybrid Retriever", fontsize=8.8, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(4.05, 2.25, "Dense MiniLM (0.6)", fontsize=7.0, ha="center", va="center", color=INK2)
+    ax.text(4.05, 1.95, "+ BM25 lexical (0.4)", fontsize=7.0, ha="center", va="center", color=INK2)
+    ax.text(4.05, 1.6, "Top-4 Chunks (Hit@4=1.0)", fontsize=6.8, ha="center", va="center", color=orange_edge, fontweight="bold")
+
+    # Arrow KB -> Retriever
+    ax.add_patch(FancyArrowPatch((6.8, 3.3), (4.5, 3.0), arrowstyle="-|>", mutation_scale=9, color=INK2, linewidth=1.0, linestyle=":"))
+
+    # Arrow Retriever -> Prompt/LLM
+    ax.add_patch(FancyArrowPatch((5.2, 2.15), (5.7, 2.15), arrowstyle="-|>", mutation_scale=10, color=orange_edge, linewidth=1.3))
+    ax.text(5.45, 2.35, "rag_v1", fontsize=6.6, ha="center", va="bottom", color=orange_edge, fontweight="bold")
+
+    # Base Generator
+    ax.add_patch(FancyBboxPatch((5.7, 1.3), 2.1, 1.7, boxstyle="round,pad=0.02,rounding_size=0.12",
+                                facecolor="#f8f9fa", edgecolor=NAVY, linewidth=1.3))
+    ax.text(6.75, 2.65, "Base Generator", fontsize=8.8, fontweight="bold", ha="center", va="center", color=NAVY)
+    ax.text(6.75, 2.25, "Qwen2.5-0.5B", fontsize=7.4, ha="center", va="center", color=INK)
+    ax.text(6.75, 1.9, "Answers with context", fontsize=7.0, ha="center", va="center", color=INK2)
+    ax.text(6.75, 1.6, "(No guardrails / gate)", fontsize=6.8, ha="center", va="center", color="#b3261e")
+
+    # Arrow LLM -> Output
+    ax.add_patch(FancyArrowPatch((7.8, 2.15), (8.3, 2.15), arrowstyle="-|>", mutation_scale=10, color=orange_edge, linewidth=1.3))
+
+    # Output
+    ax.add_patch(FancyBboxPatch((8.3, 1.5), 1.5, 1.3, boxstyle="round,pad=0.02,rounding_size=0.12",
+                                facecolor="#f5f5f4", edgecolor=INK2, linewidth=1.2))
+    ax.text(9.05, 2.3, "RAG Answer", fontsize=8.6, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(9.05, 1.85, "Cited [n] text\nPartial refusals", fontsize=6.6, ha="center", va="center", color=INK2)
+
+    ax.text(0.4, 4.25, "Model 2: Standard RAG Pipeline Architecture", fontsize=10, fontweight="bold", color=orange_edge)
+    fig.tight_layout()
+    fig.savefig(path, dpi=240)
+    plt.close(fig)
+
+
+def chart_architecture_m3(path):
+    fig, ax = plt.subplots(figsize=(6.8, 5.0))
+    ax.set_xlim(0, 10); ax.set_ylim(0, 6.8); ax.axis("off")
+    green_fill, green_edge = "#e2f4ec", MODEL_COLORS[2]
+
+    # Query
+    ax.add_patch(FancyBboxPatch((0.2, 4.6), 1.7, 1.3, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor="#f5f5f4", edgecolor=INK2, linewidth=1.2))
+    ax.text(1.05, 5.45, "User Query", fontsize=8.6, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(1.05, 5.0, "Student query", fontsize=6.8, ha="center", va="center", color=INK2)
+
+    # 1. Guardrails
+    ax.add_patch(FancyArrowPatch((1.9, 5.25), (2.3, 5.25), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.2))
+    ax.add_patch(FancyBboxPatch((2.3, 4.6), 1.8, 1.3, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor=green_fill, edgecolor=green_edge, linewidth=1.2))
+    ax.text(3.2, 5.5, "1. Guardrails", fontsize=8.5, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(3.2, 5.15, "PII redaction", fontsize=6.8, ha="center", va="center", color=INK2)
+    ax.text(3.2, 4.85, "Injection block", fontsize=6.8, ha="center", va="center", color=INK2)
+
+    # 2. Semantic Cache
+    ax.add_patch(FancyArrowPatch((4.1, 5.25), (4.5, 5.25), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.2))
+    ax.add_patch(FancyBboxPatch((4.5, 4.6), 2.0, 1.3, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor=green_fill, edgecolor=green_edge, linewidth=1.2))
+    ax.text(5.5, 5.5, "2. Semantic Cache", fontsize=8.5, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(5.5, 5.15, "Cosine sim >= 0.95", fontsize=6.8, ha="center", va="center", color=INK2)
+    ax.text(5.5, 4.85, "Scoped cache-key", fontsize=6.8, ha="center", va="center", color=INK2)
+
+    # Cache hit path to response
+    ax.add_patch(FancyArrowPatch((5.5, 5.9), (5.5, 6.3), arrowstyle="-", color=green_edge, linewidth=1.1, linestyle=":"))
+    ax.add_patch(FancyArrowPatch((5.5, 6.3), (8.9, 6.3), arrowstyle="-", color=green_edge, linewidth=1.1, linestyle=":"))
+    ax.add_patch(FancyArrowPatch((8.9, 6.3), (8.9, 3.4), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.1, linestyle=":"))
+    ax.text(7.2, 6.45, "Cache Hit (<50ms fast path)", fontsize=6.8, ha="center", va="bottom", color=green_edge, fontweight="bold")
+
+    # 3. Hybrid Retriever
+    ax.add_patch(FancyArrowPatch((5.5, 4.6), (5.5, 3.9), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.2))
+    ax.text(5.7, 4.25, "miss", fontsize=6.6, color=INK2, fontstyle="italic")
+    ax.add_patch(FancyBboxPatch((4.3, 2.6), 2.4, 1.3, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor="#fdebe3", edgecolor=MODEL_COLORS[1], linewidth=1.2))
+    ax.text(5.5, 3.5, "3. Hybrid Retriever", fontsize=8.5, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(5.5, 3.15, "Dense MiniLM + BM25", fontsize=6.8, ha="center", va="center", color=INK2)
+    ax.text(5.5, 2.85, "Top-4 cited chunks", fontsize=6.8, ha="center", va="center", color=MODEL_COLORS[1], fontweight="bold")
+
+    # 4. Relevance Gate
+    ax.add_patch(FancyArrowPatch((4.3, 3.25), (3.6, 3.25), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.2))
+    ax.add_patch(FancyBboxPatch((1.6, 2.6), 2.0, 1.3, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor=green_fill, edgecolor=green_edge, linewidth=1.2))
+    ax.text(2.6, 3.5, "4. Relevance Gate", fontsize=8.5, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(2.6, 3.15, "Dense sim < 0.40?", fontsize=6.8, ha="center", va="center", color=INK2)
+    ax.text(2.6, 2.85, "Refuse if out-of-scope", fontsize=6.8, ha="center", va="center", color=green_edge, fontweight="bold")
+
+    # Low relevance refusal arrow down to response
+    ax.add_patch(FancyArrowPatch((1.8, 2.6), (1.8, 1.6), arrowstyle="-", color=INK2, linewidth=1.0, linestyle="-."))
+    ax.add_patch(FancyArrowPatch((1.8, 1.6), (7.8, 1.6), arrowstyle="-|>", mutation_scale=8, color=INK2, linewidth=1.0, linestyle="-."))
+    ax.text(2.1, 1.75, "Low relevance -> templated refusal (no LLM call)", fontsize=6.4, color=INK2, va="bottom")
+
+    # 5. Generator + LoRA Adapter
+    ax.add_patch(FancyArrowPatch((2.6, 2.6), (2.6, 1.2), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.2))
+    ax.text(2.8, 2.0, "Pass: rag_v2", fontsize=6.6, color=green_edge, fontweight="bold")
+    ax.add_patch(FancyBboxPatch((2.6, 0.4), 2.7, 1.3, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor="#f8f9fa", edgecolor=NAVY, linewidth=1.4))
+    ax.text(3.95, 1.35, "5. Generator + LoRA (PEFT)", fontsize=8.5, fontweight="bold", ha="center", va="center", color=NAVY)
+    ax.text(3.95, 1.05, "Qwen2.5-0.5B + lora-helpdesk-v1", fontsize=7.0, ha="center", va="center", color=INK)
+    ax.text(3.95, 0.75, "r=16, 1.75% trained, merged serving", fontsize=6.8, ha="center", va="center", color=green_edge, fontweight="bold")
+
+    # 6. Output Guardrails
+    ax.add_patch(FancyArrowPatch((5.3, 1.05), (5.9, 1.05), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.2))
+    ax.add_patch(FancyBboxPatch((5.9, 0.4), 1.9, 1.3, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor=green_fill, edgecolor=green_edge, linewidth=1.2))
+    ax.text(6.85, 1.35, "6. Output Verifier", fontsize=8.5, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(6.85, 1.05, "Number check", fontsize=6.8, ha="center", va="center", color=INK2)
+    ax.text(6.85, 0.75, "Groundedness >= 0.5", fontsize=6.8, ha="center", va="center", color=INK2)
+
+    # 7. Final Response
+    ax.add_patch(FancyArrowPatch((7.8, 1.05), (8.2, 1.05), arrowstyle="-|>", mutation_scale=9, color=green_edge, linewidth=1.2))
+    ax.add_patch(FancyBboxPatch((8.2, 0.4), 1.6, 2.9, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                facecolor="#f5f5f4", edgecolor=INK2, linewidth=1.2))
+    ax.text(9.0, 2.9, "7. Response", fontsize=8.5, fontweight="bold", ha="center", va="center", color=INK)
+    ax.text(9.0, 2.5, "Verified citation\nHigh grounding", fontsize=6.8, ha="center", va="center", color=INK2)
+    ax.text(9.0, 1.7, "8. Telemetry", fontsize=8.2, fontweight="bold", ha="center", va="center", color=green_edge)
+    ax.text(9.0, 1.3, "logs/llmops.db\nTraces, Latency\nFeedback rating", fontsize=6.6, ha="center", va="center", color=INK2)
+    ax.text(9.0, 0.7, "-> Dashboard", fontsize=6.8, ha="center", va="center", color=NAVY, fontweight="bold")
+
+    ax.text(0.2, 6.55, "Model 3: Hybrid Architecture (RAG + LLMOps + PEFT)", fontsize=10, fontweight="bold", color=green_edge)
+    fig.tight_layout()
+    fig.savefig(path, dpi=240)
+    plt.close(fig)
+
+
+def chart_architecture(path):
+    # Combined multi-panel overview
+    chart_architecture_m1(path.parent / "architecture_m1.png")
+    chart_architecture_m2(path.parent / "architecture_m2.png")
+    chart_architecture_m3(path.parent / "architecture_m3.png")
+
+    fig, axes = plt.subplots(3, 1, figsize=(7.6, 9.8), gridspec_kw={"height_ratios": [1.0, 1.4, 2.2]})
+    for ax in axes:
+        ax.axis("off")
+
+    import matplotlib.image as mpimg
+    img1 = mpimg.imread(str(path.parent / "architecture_m1.png"))
+    img2 = mpimg.imread(str(path.parent / "architecture_m2.png"))
+    img3 = mpimg.imread(str(path.parent / "architecture_m3.png"))
+
+    axes[0].imshow(img1)
+    axes[1].imshow(img2)
+    axes[2].imshow(img3)
+
+    fig.tight_layout(h_pad=0.8)
     fig.savefig(path, dpi=240)
     plt.close(fig)
 

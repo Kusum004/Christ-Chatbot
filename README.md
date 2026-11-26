@@ -15,55 +15,105 @@ PEFT is applied **only to the hybrid model**. Models 1 and 2 run the untouched b
 
 **Technical report (PDF, 11 pages):** [reports/Christ_Helpdesk_Model_Report.pdf](reports/Christ_Helpdesk_Model_Report.pdf) - abstract, system overview, architecture, implementation (retrieval, LLMOps layer, LoRA), interface, experimental setup, results (quality, latency, tokens, qualitative examples, adapter iteration, prompt-only control), discussion, limitations and conclusion.
 
-## Architecture
+## Architectures
+
+The project investigates three distinct architectures representing three generations of campus AI assistance:
+
+### 1. Model 1 — Baseline: Direct LLM Only
+The raw local LLM relies solely on its internal pre-training parameters. It has no access to the Christite Handbook and no safety guardrails.
 
 ```
-                                  [ User Query ]
-                                        │
-           ┌────────────────────────────┼───────────────────────────┐
-           │ (Model 1: Direct LLM)      │                           │ (Model 2: Standard RAG)
-           │ prompt: llm_only_v1        ▼ (Model 3: Hybrid)         │ prompt: rag_v1
-           │                 ┌──────────────────────┐               │
-           │                 │ 1. Input Guardrails  │               │
-           │                 │ PII / Jailbreak Redact│               │
-           │                 └──────────┬───────────┘               │
-           │                            ▼                           │
-           │                 ┌──────────────────────┐  Cache Hit    │
-           │                 │  2. Semantic Cache   ├───────────────┼─────────────┐
-           │                 │  MiniLM cosine >=0.95│  (<50ms fast) │             │
-           │                 └──────────┬───────────┘               │             │
-           │                            ▼ Cache Miss                │             │
-           │                 ┌──────────────────────┐               │             │
-           │  PDF Ingestion ─► 3. Hybrid Retriever  ◄──────────────┘             │
-           │  (324 Chunks)   │ Dense(0.6)+BM25(0.4) │                             │
-           │                 └──────────┬───────────┘                             │
-           │                            ▼ Top-4 Context                           │
-           │                 ┌──────────────────────┐                             │
-           │                 │  4. Relevance Gate   │                             │
-           │                 │  sim < 0.40 -> Refuse│                             │
-           │                 └──────────┬───────────┘                             │
-           │                            ▼ prompt: rag_v2                          │
-           ▼                            ▼                                         │
-┌────────────────────────────────────────────────────────────────────────┐        │
-│                5. Local Generator (Qwen2.5-0.5B-Instruct)              │        │
-│  M1, M2: Untouched base model          M3: Merged LoRA (lora-helpdesk) │        │
-└───────────────────────────────────────┬────────────────────────────────┘        │
-                                        ▼                                         │
-                             ┌──────────────────────┐                             │
-                             │ 6. Output Guardrails │                             │
-                             │ Numbers / Grounding  │                             │
-                             └──────────┬───────────┘                             │
-                                        ▼                                         │
-                             ┌──────────────────────┐                             │
-                             │  7. Verified Answer  │◄────────────────────────────┘
-                             │  + Page Citations [n]│
-                             └──────────┬───────────┘
-                                        ▼
-                             ┌──────────────────────┐
-                             │ 8. SQLite Telemetry  │──► Streamlit LLMOps Dashboard
-                             │ logs/llmops.db Trace │    Latency, Grounding, Feedback
-                             └──────────────────────┘
+[ User Query ]
+      │
+      ▼ (prompt: llm_only_v1)
+┌──────────────────────────────────────────────┐
+│  Local Generator (Qwen2.5-0.5B-Instruct)     │
+│  • Parametric pre-training weights only      │
+│  • No retrieval context                      │
+└──────────────────────┬───────────────────────┘
+                       ▼
+             [ Unverified Answer ]
+             (High hallucination risk, no citations)
 ```
+
+---
+
+### 2. Model 2 — Standard RAG Pipeline
+Retrieves relevant sections from the Christite Handbook and feeds them into the base LLM prompt. Gives factual grounding and page citations.
+
+```
+[ Christite Handbook PDF ] ──► [ TOC & Section Ingest ] ──► [ 324 Chunks with Page Citations ]
+                                                                        │
+                                                                        ▼
+[ User Query ] ────────────────────────────────────────► [ Hybrid Retriever (top-4) ]
+                                                           • Dense MiniLM-L6 (0.6)
+                                                           • BM25 Lexical (0.4)
+                                                                        │
+                                                                        ▼ (prompt: rag_v1 + context)
+                                                        ┌──────────────────────────────────────────┐
+                                                        │ Local Generator (Qwen2.5-0.5B-Instruct)  │
+                                                        │ • Answers strictly from context          │
+                                                        │ • Base weights (no adapter)              │
+                                                        └───────────────────┬──────────────────────┘
+                                                                            ▼
+                                                                   [ RAG Cited Answer ]
+                                                                   (Answers with [n] handbook citations)
+```
+
+---
+
+### 3. Model 3 — Hybrid: RAG + LLMOps + PEFT
+A production-grade architecture combining pre-generation guardrails, sub-50ms semantic caching, a relevance gate, a LoRA fine-tuned adapter, post-generation numeric checks, and continuous SQLite telemetry.
+
+```
+                      [ User Query ]
+                            │
+                            ▼
+               ┌───────────────────────────┐
+               │   1. Input Guardrails     │
+               │   • Regex PII redaction   │
+               │   • Jailbreak / injection │
+               └────────────┬──────────────┘
+                            ▼
+               ┌───────────────────────────┐
+               │    2. Semantic Cache      ├──► [ Cache Hit: Fast Path <50ms ]
+               │    MiniLM cosine >= 0.95  │                   │
+               └────────────┬──────────────┘                   │
+                            ▼ Cache Miss                       │
+               ┌───────────────────────────┐                   │
+PDF Ingestion ─►│   3. Hybrid Retriever     │                   │
+(324 Chunks)   │   Dense (0.6) + BM25 (0.4)│                   │
+               │   Top-4 Chunks (Hit@4=1.0)│                   │
+               └────────────┬──────────────┘                   │
+                            ▼ Top-4 Context                    │
+               ┌───────────────────────────┐                   │
+               │   4. Relevance Gate       ├──► [ Low Relevance (<0.40) ]
+               │   Dense max sim >= 0.40?  │    Instant refusal (0 GPU tokens)
+               └────────────┬──────────────┘                   │
+                            ▼ Pass: prompt rag_v2              │
+┌───────────────────────────────────────────────────────────┐  │
+│   5. Local Generator with Merged LoRA Adapter (PEFT)      │  │
+│   • Base: Qwen2.5-0.5B-Instruct (greedy, fp16/fp32)       │  │
+│   • Adapter: lora-helpdesk-v1 (r=16, 1.75% parameters)    │  │
+│   • Trained to cite [n] & refuse ungrounded questions     │  │
+└───────────────────────────┬───────────────────────────────┘  │
+                            ▼ Raw Completion                   │
+               ┌───────────────────────────┐                   │
+               │   6. Output Guardrails    │                   │
+               │   • Unsupported numbers   │                   │
+               │   • Groundedness score    │                   │
+               └────────────┬──────────────┘                   │
+                            ▼                                  │
+               ┌───────────────────────────┐                   │
+               │   7. Final Verified Answer│◄──────────────────┴──────────────────┐
+               │   Page citations [n]      │                                      │
+               └────────────┬──────────────┘                                      │
+                            ▼                                                     │
+               ┌───────────────────────────┐                                      │
+               │   8. LLMOps Tracing       │                                      │
+               │   • logs/llmops.db        │──► Streamlit LLMOps Dashboard        │
+               │   • Latency, tokens, flags│    (Telemetry, Feedback, Eval)       │
+               └───────────────────────────┘
 
 ## Project layout
 
