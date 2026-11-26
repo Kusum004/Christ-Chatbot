@@ -242,14 +242,14 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
-# Portal Master Banner
+# Portal Master Banner with Official Christ University Logo & Crest
 st.markdown(f"""
 <div class="cu-topbar">
   <div class="cu-crest-group">
-    <div class="cu-crest-shield">C</div>
+    <img src="https://christuniversity.in/images/logo.png" alt="CHRIST (Deemed to be University)" style="height: 56px; background: #FFFFFF; padding: 5px 8px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
     <div class="cu-title-block">
       <h1 class="cu-inst-name">CHRIST (Deemed to be University)</h1>
-      <span class="cu-sub-header">Office of Student Affairs · Student Knowledge Portal (Handbook 2026-27)</span>
+      <span class="cu-sub-header">Office of Student Affairs · Student Helpdesk Portal (Handbook 2026-27)</span>
     </div>
   </div>
   <div class="cu-right-tag">
@@ -257,7 +257,7 @@ st.markdown(f"""
   </div>
 </div>
 <div class="cu-notice">
-  <span>🏛️</span>
+  <img src="https://christuniversity.in/images/logo.png" style="height: 18px; opacity: 0.85;" />
   <span><strong>Official Institutional Handbook Registry:</strong> Authorized information service verified against the Christite Academic & Regulations Handbook. All answers reference audited sections and printed pages.</span>
 </div>
 """, unsafe_allow_html=True)
@@ -273,7 +273,8 @@ hd = get_helpdesk()
 # ------------------------------------------------------------------ Administrative Control Panel (Sidebar)
 with st.sidebar:
     st.markdown("""
-    <div class="cu-sidebar-header">
+    <div class="cu-sidebar-header" style="text-align: center;">
+      <img src="https://christuniversity.in/images/logo.png" style="max-width: 170px; background: #FFFFFF; padding: 4px 8px; border-radius: 4px; margin-bottom: 8px;" />
       <h3>System Configuration</h3>
       <p>Handbook Model & Governance Registry</p>
     </div>
